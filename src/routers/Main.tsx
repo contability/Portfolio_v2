@@ -1,6 +1,10 @@
+import { useEffect } from "react";
 import styledComponents from "styled-components";
 
 const Main = () => {
+    useEffect(() => {
+        alert("메인이요");
+    }, []);
 
     return(
         <MainBox>
