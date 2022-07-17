@@ -1,17 +1,29 @@
-interface LeftNavList{
+export interface LeftNavList{
     id: string;
+    eventType: string;
+    url?: string;
 };
 
 export const list: LeftNavList[] = [{
-    id: "introduce"
+    id: "Introduce",
+    eventType: "routing",
+    url: "/introduce"
 },{
-    id: "skills"
+    id: "Skills",
+    eventType: "routing",
+    url: "/skills"
 },{
-    id: "projects"
+    id: "Projects",
+    eventType: "routing",
+    url: "/projects"
 },{
-    id: "eMail"
+    id: "E-Mail",
+    eventType: "popup"
 },{
-    id: "phoneNumber"
+    id: "Phone",
+    eventType: "popup"
 },{
-    id: "github"
+    id: "Github",
+    eventType: "link",
+    url: "https://github.com/contability"
 }];
