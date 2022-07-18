@@ -10,7 +10,7 @@ const GlobalStyle = createGlobalStyle`
     *{
         padding:0;
         margin:0;
-        font-family: 'Sarabun', sans-serif;
+        font-family: Arial,Helvetica,sans-serif;
         list-style: none;
         text-decoration: none;
         box-sizing: border-box;

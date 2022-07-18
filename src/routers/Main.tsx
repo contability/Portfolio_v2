@@ -10,7 +10,6 @@ const Main = () => {
 
     return(
         <MainBox>
-            {/* <LeftNavBar/> */}
             <section className="rightSection">
                 <div className="wrapped">
                     <header>
@@ -53,12 +52,12 @@ const MainBox = styledComponents.main`
                 font-family: Arial,Helvetica,sans-serif;
                 
                 & > div{
-                    letter-spacing: 1.9rem;
+                    letter-spacing: 2.2rem;
                     padding-left: 10px;
                 }
 
                 & > div:first-child{
-                    padding-top: 4%;
+                    padding-top: 2%;
                     font-size: 4rem;
                     letter-spacing: 1rem;
                     font-weight: 900;

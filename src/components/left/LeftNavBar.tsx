@@ -31,7 +31,10 @@ const LeftNavBar = () => {
                     <img src={image_leftBg} alt="" />
                 </picture>
                 <div className="menuContent">
-                    <strong onClick={() => {navigate("/")}}>PORTFOLIO</strong>
+                    <div className="portfolio" onClick={() => {navigate("/")}}>
+                        <div>PORT</div>
+                        <div>FOLIO</div>
+                    </div>
                     <nav>
                         <ul>
                             {list.map((v: LeftNavList, i : number) => (
@@ -59,6 +62,7 @@ const LeftNavBarBox = styledComponents.section`
     display: inline-block;
     position: fixed;
     z-index: 10;
+    font-family: Arial,Helvetica,sans-serif;
 
     & > picture{
         width: 100%;
@@ -81,8 +85,11 @@ const LeftNavBarBox = styledComponents.section`
         height: 100%;
         width: 100%;
 
-        strong{
-            padding: 10%;
+        .portfolio{
+            padding-top: 30%;
+            text-align: center;
+            font-size: 1.3rem;
+            font-weight: 900;
 
             &:hover{
                 transform: translate(0px, 10px) rotate(-15deg);
@@ -95,6 +102,9 @@ const LeftNavBarBox = styledComponents.section`
                 li{
                     padding: 10%;
                     border-bottom: 1px solid black;
+                    text-align: center;
+                    font-size: 13px;
+                    letter-spacing: 0.1rem;
                 }
             }
         }

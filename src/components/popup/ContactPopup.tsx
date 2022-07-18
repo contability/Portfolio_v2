@@ -1,23 +1,34 @@
+import { useState } from "react";
 import styled from "styled-components";
 import { EMailList, eMailList } from "../../data/D_EMailList";
 import I_gmail from "../../icon/Icon_gmail.png";
 import I_naver from "../../icon/Icon_naver.png";
-
+import { onClickCopy } from "../../utils/common";
+import MessagePopup from "./MessagePopup";
 
 const ContactPopup : Function = ({ off } : any) => {
+    const [messagePopup, setMessagePopup] = useState(false);
+    const phoneNumber = "+82 10-9992-9822";
 
     const openEmail = (address : string) => {
         window.location.href = `mailto:${address}?subject=Can I get your resume?&body=message%20goes%20here`;
         off();
     };
+
+    const copyNumber = () => {
+        onClickCopy(phoneNumber);
+        setMessagePopup(true);
+    };
     
     return(
+        <>
         <ContactPopupBox>
+            <MessagePopup off={setMessagePopup}  visible={messagePopup}/>
             <p>
                 <div className="phoneNumberWrap">
-                    <button className="phoneNumber">010-9992-9822</button>
+                    <button className="phoneNumber" onClick={copyNumber}>{phoneNumber}</button>
                 </div>
-            {eMailList.map((v : EMailList, i) => (
+            {eMailList.map((v : EMailList, i : number) => (
                 <div key={i}>
                     <button onClick={()=>{openEmail(v.address)}}>
                         <img src={v.id === "GOOGLE" ? I_gmail : I_naver} alt={v.id} title={v.address} />
@@ -26,6 +37,7 @@ const ContactPopup : Function = ({ off } : any) => {
             ))}
             </p>
         </ContactPopupBox>
+        </>
     );
 };
 
@@ -35,30 +47,10 @@ const ContactPopupBox = styled.div`
     position: fixed;
     width: 600px;
     height: 300px;
-    border-radius: 8px;
+    border-radius: 20px;
     background: #FFBF3A;
     transform: translate(-50%, -50%);
     z-index: 10;
-
-    & > .btnWrap{
-        width: 400px;
-        height: 56px;
-        border-radius: 12px;
-        font-family: 'Poppins';
-        border: 1px solid #FFFFFF;
-        font-style: normal;
-        font-weight: 500;
-        font-size: 18px;
-        text-align: center;
-        letter-spacing: -0.02em;
-        color: #FFFFFF;
-        cursor: pointer;
-        transition-duration: 0.3s;
-    }
-
-    & > .btnWrap:hover{
-        transform: translateY(-2px);
-    }
 
     p{
         display: flex;

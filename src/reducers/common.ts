@@ -3,7 +3,8 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
     isMobile: false,
     isLogin: "",
-    prjName: ""
+    prjName: "",
+    selectMenu: ""
 };
 
 const common = createSlice({
@@ -18,14 +19,20 @@ const common = createSlice({
         },
         setPrjName: (state, action) => {
             state.prjName = action.payload;
+        },
+        setSelectMenu: (state, action) => {
+            state.selectMenu = action.payload;
         }
     }
 });
 
 export { common };
+
 export const {
     setMobile,
     setLogin,
-    setPrjName
+    setPrjName,
+    setSelectMenu
 } = common.actions;
+
 export default common.reducer;
