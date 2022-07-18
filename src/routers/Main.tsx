@@ -1,18 +1,20 @@
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import styledComponents from "styled-components";
 import LeftNavBar from "../components/left/LeftNavBar";
 import image_react from "../img/image_react.jpg";
 
 
 const Main = () => {
-    
+    const navigate = useNavigate();
+
     return(
         <MainBox>
             {/* <LeftNavBar/> */}
             <section className="rightSection">
                 <div className="wrapped">
                     <header>
-                        <div>PORTFOLIO</div>
+                        <div onClick={()=>navigate("/")}>PORTFOLIO</div>
                         <div>SINHYUNGJUNG</div>
                     </header>
                     <article className={""}>
@@ -46,12 +48,25 @@ const MainBox = styledComponents.main`
             header{
                 height: 30%;
                 background: #181818;
-                color: white;
+                color: #ffffff;
                 text-align: center;
+                font-family: Arial,Helvetica,sans-serif;
+                
+                & > div{
+                    letter-spacing: 1.9rem;
+                    padding-left: 10px;
+                }
 
                 & > div:first-child{
-                    padding-top: 7%;
+                    padding-top: 4%;
+                    font-size: 4rem;
+                    letter-spacing: 1rem;
+                    font-weight: 900;
+                    padding-left: 0px;
+                    cursor: pointer;
                 }
+
+                
             }
             
             article{

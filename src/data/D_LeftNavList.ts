@@ -5,7 +5,7 @@ export interface LeftNavList{
 };
 
 export const list: LeftNavList[] = [{
-    id: "Introduce",
+    id: "about me",
     eventType: "routing",
     url: "/introduce"
 },{
