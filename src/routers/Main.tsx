@@ -20,7 +20,6 @@ const Main = () => {
                     </article>
                 </div>
             </section>
-
         </MainBox>
     );
 };

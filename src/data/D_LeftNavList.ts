@@ -17,10 +17,7 @@ export const list: LeftNavList[] = [{
     eventType: "routing",
     url: "/projects"
 },{
-    id: "E-Mail",
-    eventType: "popup"
-},{
-    id: "Phone",
+    id: "Contact",
     eventType: "popup"
 },{
     id: "Github",

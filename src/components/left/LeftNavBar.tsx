@@ -3,13 +3,12 @@ import image_leftBg from "../../img/image_leftBg.png";
 import { LeftNavList, list } from "../../data/D_LeftNavList";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import EMailPopup from "../popup/EMailPopup";
+import ContactPopup from "../popup/ContactPopup";
 import PopupBg from "../common/PopupBg";
 
 const LeftNavBar = () => {
     const navigate = useNavigate();
-    const [emailPopup, setEmailPopup] = useState(false);
-    const [phonePopup, setPhonePopup] = useState(false);
+    const [contactPopup, setContactPopup] = useState(false);
 
     const buttonEvent = (navMenu: LeftNavList) => {
         switch(navMenu.eventType){
@@ -17,8 +16,7 @@ const LeftNavBar = () => {
                 navigate(navMenu.url?navMenu.url:"");
                 break;
             case "popup":
-                if(navMenu.id === "E-Mail") setEmailPopup(true);
-                else if(navMenu.id === "Phone") setPhonePopup(true);
+                if(navMenu.id === "Contact") setContactPopup(true);
                 break;
             case "link":
                 window.open(navMenu.url?navMenu.url:"");
@@ -45,10 +43,10 @@ const LeftNavBar = () => {
                     </nav>
                 </div>
                 
-                {emailPopup && (
+                {contactPopup && (
                     <>
-                        <EMailPopup off={setEmailPopup}/>
-                        <PopupBg off={setEmailPopup} blur={true}/>
+                        <ContactPopup off={setContactPopup}/>
+                        <PopupBg off={setContactPopup} blur={true}/>
                     </>
                 )}
         </LeftNavBarBox>
