@@ -6,6 +6,7 @@ import I_naver from "../../icon/Icon_naver.png";
 import { onClickCopy } from "../../utils/common";
 import MessagePopup from "./MessagePopup";
 
+
 const ContactPopup : Function = ({ off } : any) => {
     const [messagePopup, setMessagePopup] = useState(false);
     const phoneNumber = "+82 10-9992-9822";

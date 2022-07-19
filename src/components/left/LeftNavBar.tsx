@@ -57,7 +57,7 @@ const LeftNavBar = () => {
 };
 
 const LeftNavBarBox = styledComponents.section`
-    width: 135px;
+    width: 9.6vw;
     height: 100%;
     display: inline-block;
     position: fixed;
