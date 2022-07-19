@@ -31,8 +31,8 @@ const MainBox = styledComponents.main`
     z-index: 0;
     
     .rightSection{
-        left: 110px;
-        width: 90%;
+        left: 135px;
+        width: 100%;
         height: 100%;
         display: inline-block;
         position: absolute;
@@ -52,7 +52,7 @@ const MainBox = styledComponents.main`
                 font-family: Arial,Helvetica,sans-serif;
                 
                 & > div{
-                    letter-spacing: 2.2rem;
+                    letter-spacing: 2rem;
                     padding-left: 10px;
                 }
 
@@ -72,8 +72,7 @@ const MainBox = styledComponents.main`
                 height: 50%;
 
                 img{
-                    width: 100%;
-                    height: 100%;
+                    width: 50%;
                     position: absolute;
                     z-index: 0;
                 }
