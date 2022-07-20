@@ -2,7 +2,7 @@ import { useState } from "react";
 import styled from "styled-components";
 import { EMailList, eMailList } from "../../data/D_EMailList";
 import I_gmail from "../../icon/Icon_gmail.png";
-import I_naver from "../../icon/Icon_naver.png";
+import I_naver from "../../icon/Icon_naver2.png";
 import { onClickCopy } from "../../utils/common";
 import MessagePopup from "./MessagePopup";
 
@@ -29,13 +29,15 @@ const ContactPopup : Function = ({ off } : any) => {
                 <div className="phoneNumberWrap">
                     <button className="phoneNumber" onClick={copyNumber}>{phoneNumber}</button>
                 </div>
-            {eMailList.map((v : EMailList, i : number) => (
-                <div key={i}>
-                    <button onClick={()=>{openEmail(v.address)}}>
-                        <img src={v.id === "GOOGLE" ? I_gmail : I_naver} alt={v.id} title={v.address} />
-                    </button>
+                <div className="mailWrap">
+                {eMailList.map((v : EMailList, i : number) => (
+                    <div key={i}>
+                        <button onClick={()=>{openEmail(v.address)}}>
+                            <img src={v.id === "GOOGLE" ? I_gmail : I_naver} className={v.id.toLowerCase()} alt={v.id} title={v.address} />
+                        </button>
+                    </div>
+                ))}
                 </div>
-            ))}
             </p>
         </ContactPopupBox>
         </>
@@ -59,6 +61,7 @@ const ContactPopupBox = styled.div`
         justify-content: center;
         align-items: center;
         height: 100%;
+        gap: 35px;
 
         .phoneNumberWrap{
             & > .phoneNumber{
@@ -80,21 +83,45 @@ const ContactPopupBox = styled.div`
                 transform: translateY(-2px);
             }
         }
-        div{
-            width: 100%;
-            text-align: center;
+        .mailWrap{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: row;
+            gap: 65px;
 
-            & > button{
-                transition-duration: 0.3s;
-                img{
-                    width: 90px;
+            div{
+                width: 160px;
+                border-radius: 20px;
+                background: orange;
+                text-align: center;
+                display: flex;
+                align-items: center;
+                align-content: center;
+                justify-content: center;
+
+                &:nth-child(2){
+                    height: 75px;
+                }
+    
+                & > button{
+                    transition-duration: 0.3s;
+                    flex: 1;
+
+                    .google{
+                        width: 90px;
+                    }
+                    .naver{
+                        height: 50px;
+                    }
+                }
+    
+                & > button:hover{
+                    transform: translateY(-2px);
                 }
             }
-
-            & > button:hover{
-                transform: translateY(-2px);
-            }
         }
+        
     }
 `;
 

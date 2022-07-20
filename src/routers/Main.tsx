@@ -12,6 +12,7 @@ import image_leftBg from "../img/image_leftBg.png";
 import image_do from "../img/image_do.jpg";
 import image_cassette from "../img/image_cassette.jpg";
 import image_icecream from "../img/image_icecream.png";
+import image_clothes from "../img/image_clothes.jpg";
 
 
 
@@ -32,7 +33,7 @@ const Main = () => {
 
     return(
         <MainBox 
-        // scrollRef={scrollRef.current}
+        scrollRef={scrollRef.current}
         >
             <section className="rightSection">
                 <div className="wrapped">
@@ -40,10 +41,11 @@ const Main = () => {
                         <div onClick={()=>navigate("/")}>PORTFOLIO</div>
                         <div>SINHYUNGJUNG</div>
                     </header>
-                    <article className={""}>
+                    <article>
                         <img className="imgReact" src={image_react} alt="" />
                         <img src={image_do} alt="" className="do" />
                         <img src={image_cassette} alt="" className="cassette" />
+                        <img src={image_clothes} alt="" className="clothes" />
                     </article>
                 </div>
             </section>
@@ -51,7 +53,7 @@ const Main = () => {
     );
 };
 
-const MainBox = styledComponents.main`
+const MainBox : any = styledComponents.main`
     width: 100%;
     height: 100vh;
     z-index: 0;
@@ -93,8 +95,6 @@ const MainBox = styledComponents.main`
                     padding-left: 0px;
                     cursor: pointer;
                 }
-
-                
             }
             
             article{
@@ -105,7 +105,11 @@ const MainBox = styledComponents.main`
                     top: 0;
                     position: fixed;
                     z-index: 0;
-                    clip: rect(10px, 0px, 30px, 20px);
+                    clip: rect(
+                        0px, 
+                        91vw, 
+                        500px,
+                        0px);
                 }
 
                 & > .do{
@@ -114,6 +118,10 @@ const MainBox = styledComponents.main`
                 }
 
                 & > .cassette{
+                    width: 52vw;
+                }
+
+                & > .clothes{
                     width: 52vw;
                 }
             }
