@@ -49,10 +49,14 @@ const Main = () => {
                     </article>
                     <article className="postContents">
                         <div className="firstSection">
-                            <div className="firstPanel">first</div>
+                            <div className="firstPanel">
+                                <img src={image_icecream} alt="" />
+                            </div>
                             <div className="colFlex">
-                                <p>weg</p>
-                                <p>weg</p>
+                                <p>
+                                    yellow
+                                </p>
+                                <p>쪼금yELLOW</p>
                                 <p>weg</p>
                             </div>
                             <div className="secondPanel">last</div>
@@ -111,7 +115,7 @@ const MainBox : any = styledComponents.main`
                     clip: rect(
                         0px, 
                         91vw, 
-                        500px,
+                        100vh,
                         0px
                         );
                 }
@@ -141,34 +145,42 @@ const MainBox : any = styledComponents.main`
                 flex-direction: column;
                 .firstSection{
                     display: flex;
-                    background: grey;
-                    //TODO: 삭제 필요
-                    // height: 100vh;
+                    height: 741.3px;
                         .firstPanel{
-                            width: 33vw;
+                            width: 191px;
+                            background: #4aad8c;
                         }
 
                         p{
                             
-                            &:nth-child(0){
-                                height: 10vh;
-                                background: yellow;
-                                width: 33vw;
+                            &:nth-child(1){
+                                height: 400px;
+                                background: #ffd942;
                             }
                             
-                            &:nth-child(1){
-                                // width: 10vw;
-                                height: 29vh;
+                            &:nth-child(2){
+                                height: 200px;
+                                background: #fffaae;
                             }
+
+                            &:nth-child(3){
+                                background: #fd4f55;
+                                height: 141.3px;
+                            }
+                        }
+
+                        .secondPanel{
+                            flex: 1;
                         }
                 }
                 .secondSection{
-                    background: white;
+                    background: grey;
                 }
 
                 .colFlex{
                     display:flex;
                     flex-direction: column;
+                    width: 46vw;
                 }
             }
         }
