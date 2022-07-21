@@ -56,75 +56,64 @@ const MainBox : any = styledComponents.main`
     height: 100vh;
     z-index: 0;
     
-    // .rightSection{
-    //     left: 9.6vw;
-    //     width: 90.4vw;
-    //     height: 100vh;
-    //     display: inline-block;
-    //     position: absolute;
+    .wrapped{
+        width:100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        position: relative;
 
-        .wrapped{
-            width:100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            position: relative;
-
-            header{
-                height: 35vh;
-                background: #181818;
-                color: #ffffff;
-                text-align: center;
-                font-family: Arial,Helvetica,sans-serif;
-                // position: relative;
-                top: 0;
-                z-index: 1;
-                
-                & > div{
-                    letter-spacing: 2rem;
-                    padding-left: 10px;
-                }
-
-                & > div:first-child{
-                    padding-top: 12vh;
-                    font-size: 4rem;
-                    letter-spacing: 1rem;
-                    font-weight: 900;
-                    padding-left: 0px;
-                    cursor: pointer;
-                }
-            }
+        header{
+            height: 35vh;
+            background: #181818;
+            color: #ffffff;
+            text-align: center;
+            font-family: Arial,Helvetica,sans-serif;
+            top: 0;
+            z-index: 1;
             
-            article{
-                // height: 50%;
+            & > div{
+                letter-spacing: 2rem;
+                padding-left: 10px;
+            }
 
-                & > .imgReact{
-                    width: 91vw;
-                    top: 0;
-                    position: fixed;
-                    z-index: 0;
-                    clip: rect(
-                        0px, 
-                        91vw, 
-                        500px,
-                        0px);
-                }
-
-                & > .do{
-                    width: 15%;
-                    right: 0;
-                }
-
-                & > .cassette{
-                    width: 52vw;
-                }
-
-                & > .clothes{
-                    width: 52vw;
-                }
+            & > div:first-child{
+                padding-top: 12vh;
+                font-size: 4rem;
+                letter-spacing: 1rem;
+                font-weight: 900;
+                padding-left: 0px;
+                cursor: pointer;
             }
         }
-    // }
+        
+        article{
+            & > .imgReact{
+                width: 91vw;
+                top: 0;
+                position: fixed;
+                z-index: 0;
+                clip: rect(
+                    0px, 
+                    91vw, 
+                    500px,
+                    0px);
+            }
+
+            & > .do{
+                width: 15%;
+                right: 0;
+            }
+
+            & > .cassette{
+                width: 52vw;
+            }
+
+            & > .clothes{
+                width: 52vw;
+            }
+        }
+    }
 `;
 
 export default Main;

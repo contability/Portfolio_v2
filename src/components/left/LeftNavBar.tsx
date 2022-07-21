@@ -104,7 +104,10 @@ const LeftNavBarBox = styledComponents.section`
                     border-bottom: 1px solid black;
                     text-align: center;
                     font-size: 13px;
-                    letter-spacing: 0.1rem;
+
+                    button{
+                        letter-spacing: 0.2rem;
+                    }
                 }
             }
         }

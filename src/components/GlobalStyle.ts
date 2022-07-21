@@ -11,6 +11,7 @@ const GlobalStyle = createGlobalStyle`
         padding:0;
         margin:0;
         font-family: Arial,Helvetica,sans-serif;
+        // font-family: sb_aggravation;
         list-style: none;
         text-decoration: none;
         box-sizing: border-box;
@@ -20,6 +21,13 @@ const GlobalStyle = createGlobalStyle`
         -moz-text-size-adjust: none;
         -ms-text-size-adjust: none;
     }
+
+    // @font-face{
+    //     font-family: "sb_aggravation";
+    //     font-weight: 400;
+    //     font-style: normal;
+    //     src: url("../assets/font/SB_aggravation_L.otf") format("opentype");
+    // }
     
     body{
 
