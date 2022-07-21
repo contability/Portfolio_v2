@@ -40,12 +40,26 @@ const Main = () => {
                     <div onClick={()=>navigate("/")}>PORTFOLIO</div>
                     <div>SINHYUNGJUNG</div>
                 </header>
-                <article>
-                    <img className="imgReact" src={image_react} alt="" />
-                    <img src={image_do} alt="" className="do" />
-                    <img src={image_cassette} alt="" className="cassette" />
-                    <img src={image_clothes} alt="" className="clothes" />
-                </article>
+                <section>
+                    <article className="imgContents">
+                        <img className="imgReact" src={image_react} alt="" />
+                        <img src={image_do} alt="" className="do" />
+                        <img src={image_cassette} alt="" className="cassette" />
+                        <img src={image_clothes} alt="" className="clothes" />
+                    </article>
+                    <article className="postContents">
+                        <div className="firstSection">
+                            <div className="firstPanel">first</div>
+                            <div className="colFlex">
+                                <p>weg</p>
+                                <p>weg</p>
+                                <p>weg</p>
+                            </div>
+                            <div className="secondPanel">last</div>
+                        </div>
+                        <div className="secondSection">wegweg</div>
+                    </article>
+                </section>
             </div>
         </MainBox>
     );
@@ -70,7 +84,7 @@ const MainBox : any = styledComponents.main`
             text-align: center;
             font-family: Arial,Helvetica,sans-serif;
             top: 0;
-            z-index: 1;
+            z-index: 10;
             
             & > div{
                 letter-spacing: 2rem;
@@ -87,30 +101,75 @@ const MainBox : any = styledComponents.main`
             }
         }
         
-        article{
-            & > .imgReact{
-                width: 91vw;
-                top: 0;
-                position: fixed;
-                z-index: 0;
-                clip: rect(
-                    0px, 
-                    91vw, 
-                    500px,
-                    0px);
+        section{
+            .imgContents{
+                & > .imgReact{
+                    width: 91vw;
+                    top: 0;
+                    position: fixed;
+                    z-index: 3;
+                    clip: rect(
+                        0px, 
+                        91vw, 
+                        500px,
+                        0px
+                        );
+                }
+
+                & > .do{
+                    width: 15%;
+                    right: 0;
+                    position: fixed;
+                }
+
+                & > .cassette{
+                    width: 52vw;
+                    position: fixed;
+                }
+
+                & > .clothes{
+                    width: 52vw;
+                    position: fixed;
+                }
             }
 
-            & > .do{
-                width: 15%;
-                right: 0;
-            }
+            .postContents{
+                z-index: 10;
+                width: 100%;
+                display: flex;
+                position: absolute;
+                flex-direction: column;
+                .firstSection{
+                    display: flex;
+                    background: grey;
+                    //TODO: 삭제 필요
+                    // height: 100vh;
+                        .firstPanel{
+                            width: 33vw;
+                        }
 
-            & > .cassette{
-                width: 52vw;
-            }
+                        p{
+                            
+                            &:nth-child(0){
+                                height: 10vh;
+                                background: yellow;
+                                width: 33vw;
+                            }
+                            
+                            &:nth-child(1){
+                                // width: 10vw;
+                                height: 29vh;
+                            }
+                        }
+                }
+                .secondSection{
+                    background: white;
+                }
 
-            & > .clothes{
-                width: 52vw;
+                .colFlex{
+                    display:flex;
+                    flex-direction: column;
+                }
             }
         }
     }
