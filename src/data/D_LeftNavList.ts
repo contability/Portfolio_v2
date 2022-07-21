@@ -9,18 +9,14 @@ export const list: LeftNavList[] = [{
     eventType: "routing",
     url: "/introduce"
 },{
-    id: "Skills",
-    eventType: "routing",
-    url: "/skills"
-},{
-    id: "Projects",
+    id: "projects",
     eventType: "routing",
     url: "/projects"
 },{
-    id: "Contact",
+    id: "contact",
     eventType: "popup"
 },{
-    id: "Github",
+    id: "github",
     eventType: "link",
     url: "https://github.com/contability"
 }];

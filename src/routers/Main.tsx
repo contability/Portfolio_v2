@@ -35,20 +35,18 @@ const Main = () => {
         <MainBox 
         scrollRef={scrollRef.current}
         >
-            <section className="rightSection">
-                <div className="wrapped">
-                    <header>
-                        <div onClick={()=>navigate("/")}>PORTFOLIO</div>
-                        <div>SINHYUNGJUNG</div>
-                    </header>
-                    <article>
-                        <img className="imgReact" src={image_react} alt="" />
-                        <img src={image_do} alt="" className="do" />
-                        <img src={image_cassette} alt="" className="cassette" />
-                        <img src={image_clothes} alt="" className="clothes" />
-                    </article>
-                </div>
-            </section>
+            <div className="wrapped">
+                <header>
+                    <div onClick={()=>navigate("/")}>PORTFOLIO</div>
+                    <div>SINHYUNGJUNG</div>
+                </header>
+                <article>
+                    <img className="imgReact" src={image_react} alt="" />
+                    <img src={image_do} alt="" className="do" />
+                    <img src={image_cassette} alt="" className="cassette" />
+                    <img src={image_clothes} alt="" className="clothes" />
+                </article>
+            </div>
         </MainBox>
     );
 };
@@ -58,12 +56,12 @@ const MainBox : any = styledComponents.main`
     height: 100vh;
     z-index: 0;
     
-    .rightSection{
-        left: 9.6vw;
-        width: 90.4vw;
-        height: 100vh;
-        display: inline-block;
-        position: absolute;
+    // .rightSection{
+    //     left: 9.6vw;
+    //     width: 90.4vw;
+    //     height: 100vh;
+    //     display: inline-block;
+    //     position: absolute;
 
         .wrapped{
             width:100%;
@@ -126,7 +124,7 @@ const MainBox : any = styledComponents.main`
                 }
             }
         }
-    }
+    // }
 `;
 
 export default Main;

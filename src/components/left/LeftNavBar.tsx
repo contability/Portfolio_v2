@@ -16,7 +16,7 @@ const LeftNavBar = () => {
                 navigate(navMenu.url?navMenu.url:"");
                 break;
             case "popup":
-                if(navMenu.id === "Contact") setContactPopup(true);
+                if(navMenu.id === "contact") setContactPopup(true);
                 break;
             case "link":
                 window.open(navMenu.url?navMenu.url:"");
