@@ -5,14 +5,14 @@ import LeftNavBar from "../components/left/LeftNavBar";
 import image_react from "../img/image_react.jpg";
 import image_blockchain from "../img/image_blockchain.png";
 import image_css from "../img/image_css.png";
-import image_html from "../img/image_html.png";
+import image_html from "../img/image_html.jpg";
 import image_java from "../img/image_java.png";
 import image_js from "../img/image_js.png";
 import image_leftBg from "../img/image_leftBg.png";
-import image_do from "../img/image_do.jpg";
 import image_cassette from "../img/image_cassette.jpg";
 import image_icecream from "../img/image_icecream.png";
 import image_clothes from "../img/image_clothes.jpg";
+import image_perfume from "../img/image_perfume.jpg";
 
 
 
@@ -43,9 +43,9 @@ const Main = () => {
                 <section>
                     <article className="imgContents">
                         <img className="imgReact" src={image_react} alt="" />
-                        <img src={image_do} alt="" className="do" />
                         <img src={image_cassette} alt="" className="cassette" />
                         <img src={image_clothes} alt="" className="clothes" />
+                        <img src={image_perfume} alt="" className="perfume"/>
                     </article>
                     <article className="postContents">
                         <div className="firstSection">
@@ -53,15 +53,18 @@ const Main = () => {
                                 <img src={image_icecream} alt="" />
                             </div>
                             <div className="colFlex">
-                                <p>
-                                    yellow
-                                </p>
-                                <p>쪼금yELLOW</p>
-                                <p>weg</p>
+                                <p></p>
+                                <p></p>
+                                <p></p>
                             </div>
-                            <div className="secondPanel">last</div>
+                            <div className="secondPanel"></div>
                         </div>
-                        <div className="secondSection">wegweg</div>
+                        <div className="secondSection">
+                            <p>
+                                <img src={image_html} alt="" className="i_html" />
+                            </p>
+                            <p></p>
+                        </div>
                     </article>
                 </section>
             </div>
@@ -120,7 +123,7 @@ const MainBox : any = styledComponents.main`
                         );
                 }
 
-                & > .do{
+                & > .perfume{
                     width: 15%;
                     right: 0;
                     position: fixed;
@@ -174,7 +177,8 @@ const MainBox : any = styledComponents.main`
                         }
                 }
                 .secondSection{
-                    background: grey;
+                    display: flex;
+
                 }
 
                 .colFlex{

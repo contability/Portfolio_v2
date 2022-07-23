@@ -61,7 +61,7 @@ const LeftNavBarBox = styledComponents.section`
     height: 100%;
     display: inline-block;
     position: fixed;
-    z-index: 10;
+    z-index: 50;
     font-family: Arial,Helvetica,sans-serif;
 
     & > picture{
