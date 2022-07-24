@@ -1,3 +1,8 @@
+import img_projects_1_1 from "../img/projects/image_projects_1_1.jpg";
+import img_projects_1_2 from "../img/projects/image_projects_1_2.jpg";
+import img_projects_1_3 from "../img/projects/image_projects_1_3.png";
+import img_projects_1_4 from "../img/projects/image_projects_1_4.jpg";
+import img_projects_1_5 from "../img/projects/image_projects_1_5.jpg";
 import img_projects_2_1 from "../img/projects/image_projects_2_1.png";
 import img_projects_2_2 from "../img/projects/image_projects_2_2.png";
 import img_projects_2_3 from "../img/projects/image_projects_2_3.png";
@@ -39,6 +44,11 @@ const D_Projects: projectsType[] = [{
         "msSQL"
     ],
     img:[
+        img_projects_1_1,
+        img_projects_1_2,
+        img_projects_1_3,
+        img_projects_1_4,
+        img_projects_1_5
     ]
 },{
     name: "COLLEXX",
