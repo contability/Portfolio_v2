@@ -1,4 +1,9 @@
-const D_skills: Array<object> = [{
+interface skillsType{
+    id: string;
+    amount: number;
+}
+
+const D_skills: skillsType[] = [{
     id:"javascript",
     amount: 60
 },{
@@ -17,7 +22,7 @@ const D_skills: Array<object> = [{
     id:"postgreSQL",
     amount: 50
 },{
-    id:"Oracle",
+    id:"oracle",
     amount: 40
 },{
     id:"mySQL",
@@ -28,6 +33,9 @@ const D_skills: Array<object> = [{
 },{
     id:"AWS",
     amount: 25
+}, {
+    id: "solidity",
+    amount: 10
 }];
 
 export { D_skills };

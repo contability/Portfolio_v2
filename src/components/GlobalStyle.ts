@@ -10,8 +10,8 @@ const GlobalStyle = createGlobalStyle`
     *{
         padding:0;
         margin:0;
-        font-family: Arial,Helvetica,sans-serif;
-        // font-family: sb_aggravation;
+        // font-family: Arial,Helvetica,sans-serif;
+        font-family: Arial, sans-serf;;
         list-style: none;
         text-decoration: none;
         box-sizing: border-box;

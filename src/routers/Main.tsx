@@ -74,8 +74,9 @@ const Main = () => {
 
 const MainBox : any = styledComponents.main`
     width: 100%;
-    height: 100vh;
+    height: inherit;
     z-index: 0;
+    overflow-y: auto;
     
     .wrapped{
         width:100%;
@@ -178,7 +179,12 @@ const MainBox : any = styledComponents.main`
                 }
                 .secondSection{
                     display: flex;
-
+                    p{
+                        height: 34vh;
+                        img{
+                            height: 100%;
+                        }
+                    }
                 }
 
                 .colFlex{

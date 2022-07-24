@@ -32,6 +32,7 @@ const AppBox = styled.main`
     height: 100vh;
     display: inline-block;
     position: absolute;
+    overflow-y: hidden;
   }
 `;
 

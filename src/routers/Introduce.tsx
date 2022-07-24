@@ -13,7 +13,7 @@ const Introduce = () => {
                         <p key={i} className="skill">
                             <p>{v.id}</p>
                             <p>
-                                <progress value={v.amount} max="100"/>
+                                <input type="range" className="rangeInput" value={v.amount} max="100"/>
                             </p>
                         </p>
                     ))}
@@ -40,15 +40,16 @@ const Introduce = () => {
 
 const IntroduceBox = styledComponents.main`
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     z-index: 0;
-    background: #FFFAAE;
+    background: #FFF2BB;
     display: flex;
 
     .left{
         width: 20.971386vw;
+        min-height: inherit;
         padding: 3%;
-        height: 100%;
+        height: 100vh;
         z-index: 1;
         background: black;
         color: white;
@@ -56,27 +57,63 @@ const IntroduceBox = styledComponents.main`
         flex-direction: column;
         align-items: flex-start;
         gap: 5vh;
+        overflow-y: auto;
 
         .skills{
             display: flex;
             flex-direction: column;
             align-items: flex-start;
             gap: 2vh;
+            width: 100%;
 
             .skill{
                 width: 100%;
+
+                p{
+                    .rangeInput {
+                        -webkit-appearance: none;
+                        width: 100%;
+                        height: 4px;
+                        margin: 20px 0;
+                        background: linear-gradient(
+                            90deg,
+                            rgba(193, 227, 214, 0) 0%,
+                            rgba(193, 227, 214, 0.5) 100%
+                        );
+                        border-radius: 8px;
+
+                        &::-webkit-slider-thumb {
+                            -webkit-appearance: none;
+                            width: 14px;
+                            background: rgba(
+                                235,
+                                77,
+                                78,
+                                0
+                            );
+
+                            //가운데 똥그란거
+                            border: 1px solid rgba(193, 227, 214, 1);
+                            border-radius: 50%;
+                            box-shadow: 0px 0px 6px
+                            rgba(255, 83, 83, 0);
+                        }
+                    }
+                }
+                
             }
         }
     }
 
     .right{
         flex: 1;
-        height: 100%;
+        height: 100vh;
         padding: 2.3%;
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 20vh;
+        overflow-y: auto;
 
         .profile_img{
             height: 40vh;
