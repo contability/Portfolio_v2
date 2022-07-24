@@ -1,25 +1,33 @@
-const D_skills = [{
-    id:"javascript"
+const D_skills: Array<object> = [{
+    id:"javascript",
+    amount: 60
 },{
-    id:"react"
+    id:"react",
+    amount: 50
 },{
-    id:"nodeJs"
+    id:"nodeJs",
+    amount: 25
 },{
-    id:"java"
+    id:"java",
+    amount: 60
 },{
-    id:"jQuery"
+    id:"jQuery",
+    amount: 60
 },{
-    id:"postgreSQL"
+    id:"postgreSQL",
+    amount: 50
 },{
-    id:"Oracle"
+    id:"Oracle",
+    amount: 40
 },{
-    id:"mySQL"
+    id:"mySQL",
+    amount: 40
 },{
-    id:"mariaDB"
+    id:"msSQL",
+    amount: 20
 },{
-    id:"AWS"
-},{
-    id:"msSQL"
+    id:"AWS",
+    amount: 25
 }];
 
 export { D_skills };
