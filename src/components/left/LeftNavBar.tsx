@@ -5,15 +5,22 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ContactPopup from "../popup/ContactPopup";
 import PopupBg from "../common/PopupBg";
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { setSelectMenu } from "../../reducers/common";
 
 const LeftNavBar = () => {
     const navigate = useNavigate();
     const [contactPopup, setContactPopup] = useState(false);
 
+    const selectMenu = useSelector((state : any) => state.common.selectMenu);
+    const dispatch = useDispatch();
+
     const buttonEvent = (navMenu: LeftNavList) => {
         switch(navMenu.eventType){
             case "routing":
                 navigate(navMenu.url?navMenu.url:"");
+                dispatch(setSelectMenu(navMenu.id));
                 break;
             case "popup":
                 if(navMenu.id === "contact") setContactPopup(true);
@@ -38,7 +45,7 @@ const LeftNavBar = () => {
                     <nav>
                         <ul>
                             {list.map((v: LeftNavList, i : number) => (
-                                <li key={i}>
+                                <li key={i} className={v.id === selectMenu ? "on" : ""}>
                                     <button onClick={()=>{buttonEvent(v)}}>{v.id}</button>
                                 </li>
                             ))}
@@ -108,6 +115,10 @@ const LeftNavBarBox = styledComponents.section`
                     button{
                         letter-spacing: 0.2rem;
                     }
+                }
+
+                .on{
+                    color: #ffffff;
                 }
             }
         }
