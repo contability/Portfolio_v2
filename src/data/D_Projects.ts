@@ -9,6 +9,7 @@ import img_projects_2_3 from "../img/projects/image_projects_2_3.png";
 import img_projects_3_1 from "../img/projects/image_projects_3_1.png";
 import img_projects_3_2 from "../img/projects/image_projects_3_2.png";
 import img_projects_3_3 from "../img/projects/image_projects_3_3.png";
+import mov_projects_4 from "../assets/movie/mov_project_4.mp4";
 
 export interface projectsType{
     name: string;
@@ -18,6 +19,7 @@ export interface projectsType{
     desc: Array<string>;
     usedSkills: Array<string>;
     img: any;
+    mov: any;
 }
 
 const D_Projects: projectsType[] = [{
@@ -49,7 +51,7 @@ const D_Projects: projectsType[] = [{
         img_projects_1_3,
         img_projects_1_4,
         img_projects_1_5
-    ]
+    ],mov: []
 },{
     name: "COLLEXX",
     start: "2022-05",
@@ -70,7 +72,7 @@ const D_Projects: projectsType[] = [{
         img_projects_3_1,
         img_projects_3_2,
         img_projects_3_3,
-    ]
+    ],mov: []
 },{
     name: "BICOSWAP",
     start: "2022-05",
@@ -92,7 +94,8 @@ const D_Projects: projectsType[] = [{
         img_projects_2_1,
         img_projects_2_2,
         img_projects_2_3
-    ]
+    ],
+    mov: []
 },{
     name: "margin",
     start: "2022-06",
@@ -110,7 +113,12 @@ const D_Projects: projectsType[] = [{
         "nodeJs",
         "mySQL",
     ],
-    img: []
+    img: [
+        
+    ],
+    mov: [
+        mov_projects_4
+    ]
 }]; 
 
 export { D_Projects };

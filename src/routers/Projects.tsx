@@ -6,7 +6,7 @@ const Projects = () => {
     return(
         <ProjectsBox>
             {D_Projects.map((prj: projectsType, i) => (
-                <article>
+                <article key={i}>
                     <div className="prjHeader">
                         <h1>{prj.name}</h1>
                         <span>{prj.start}</span>
@@ -18,6 +18,15 @@ const Projects = () => {
                         {prj.img.map((v: any, i: number) => (
                             <p key={i}>
                                 <img src={v} alt="" onClick={() => window.open(v)}/>
+                            </p>
+                        ))}
+                    </div>
+                    <div className="videoArea">
+                        {prj.mov.map((v: any, i: number) => (
+                            <p key={i}>
+                                <video autoPlay={true} loop={true}>
+                                    <source src={v} type="video/mp4"/>
+                                </video>
                             </p>
                         ))}
                     </div>
@@ -85,6 +94,18 @@ const ProjectsBox = styledComponents.main`
                 width: 100%;
                 border-radius: 8px;
                 cursor: pointer;
+            }
+        }
+
+        .videoArea{
+            display: flex;
+            gap: 15px;
+            flex-direction: row;
+            flex-wrap: wrap;
+
+            video{
+                width: 100%;
+                border-radius: 8px;
             }
         }
     }
