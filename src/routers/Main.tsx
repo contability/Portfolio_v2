@@ -13,12 +13,15 @@ import image_cassette from "../img/image_cassette.jpg";
 import image_icecream from "../img/image_icecream.png";
 import image_clothes from "../img/image_clothes.jpg";
 import image_perfume from "../img/image_perfume.jpg";
+import { useDispatch } from "react-redux";
+import { setSelectMenu } from "../reducers/common";
 
 
 
 const Main = () => {
     const navigate = useNavigate();
     const scrollRef = useRef(0);
+    const dispatch = useDispatch();
 
     // useEffect(() => {
     //     console.log(scrollY);
@@ -30,6 +33,10 @@ const Main = () => {
         console.log(scrollRef.current);
         
     });
+
+    useEffect(()=>{
+        dispatch(setSelectMenu(""));
+    }, []);
 
     return(
         <MainBox 
