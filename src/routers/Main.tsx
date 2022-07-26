@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import styledComponents from "styled-components";
 import LeftNavBar from "../components/left/LeftNavBar";
 import image_react from "../img/image_react.jpg";
+import img_react from "../img/image_react.png";
 import image_blockchain from "../img/image_blockchain.png";
 import image_css from "../img/image_css.png";
 import image_html from "../img/image_html.jpg";
@@ -61,16 +62,28 @@ const Main = () => {
                             </div>
                             <div className="colFlex">
                                 <p></p>
-                                <p></p>
-                                <p></p>
+                                <p>
+                                    <p>is a developer,</p>
+                                    <p>developer,</p>
+                                    <p>developer at heart</p>
+                                </p>
+                                <p>let's work together!</p>
                             </div>
-                            <div className="secondPanel"></div>
+                            <div className="secondPanel">
+                                <p>
+                                    <p>about me</p>
+                                    <p>check it out</p>
+                                </p>
+                                <p>1/5</p>
+                            </div>
                         </div>
                         <div className="secondSection">
                             <p>
                                 <img src={image_html} alt="" className="i_html" />
                             </p>
-                            <p></p>
+                            <p className="panelReact">
+                                <img src={img_react} alt="" className="i_react" />
+                            </p>
                         </div>
                     </article>
                 </section>
@@ -154,51 +167,80 @@ const MainBox : any = styledComponents.main`
                 display: flex;
                 position: absolute;
                 flex-direction: column;
+
                 .firstSection{
                     display: flex;
-                    height: 741.3px;
-                        .firstPanel{
-                            width: 191px;
-                            background: #4aad8c;
-                        }
+                    // height: 741.3px;
+                    height: 71.4vh;
 
-                        p{
-                            
+                    .colFlex{
+                        display:flex;
+                        flex-direction: column;
+                        width: 46vw;
+
+                        & > p{
+                            color: #181818;
                             &:nth-child(1){
                                 height: 400px;
+                                // height: inherit;
                                 background: #ffd942;
+                                padding: 1.5rem;
                             }
                             
                             &:nth-child(2){
                                 height: 200px;
                                 background: #fffaae;
+                                font-size: 1.7rem;
+                                font-weight: 900;
+                                letter-spacing: 0.6vw;
+                                padding: 2rem;
                             }
 
                             &:nth-child(3){
                                 background: #fd4f55;
                                 height: 141.3px;
+                                // padding-top: 70px;
+                                font-size: 1.3rem;
+                                font-weight: 500;
+                                padding-top: 3.3rem;
                             }
                         }
+                    }
 
-                        .secondPanel{
-                            flex: 1;
-                        }
+                    .firstPanel{
+                        width: 191px;
+                        background: #4aad8c;
+                    }
+
+                        
+
+                    .secondPanel{
+                        flex: 1;
+                        display:flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        align-items: flex-start;
+                    }
                 }
+
                 .secondSection{
                     display: flex;
-                    p{
+                    flex-direction: row-reverse;
+
+                    & > p{
                         height: 34vh;
+                        // height: 352.914px;
                         img{
                             height: 100%;
                         }
                     }
+
+                    .panelReact{
+                        background: #fffaae;
+                    }
                 }
 
-                .colFlex{
-                    display:flex;
-                    flex-direction: column;
-                    width: 46vw;
-                }
+                
             }
         }
     }
