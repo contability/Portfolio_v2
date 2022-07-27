@@ -25,7 +25,7 @@ const ContactPopup : Function = ({ off } : any) => {
         <>
         <ContactPopupBox>
             <MessagePopup off={setMessagePopup}  visible={messagePopup}/>
-            <p>
+            <div className={"contactBody"}>
                 <div className="phoneNumberWrap">
                     <button className="phoneNumber" onClick={copyNumber}>{phoneNumber}</button>
                 </div>
@@ -38,7 +38,7 @@ const ContactPopup : Function = ({ off } : any) => {
                     </div>
                 ))}
                 </div>
-            </p>
+            </div>
         </ContactPopupBox>
         </>
     );
@@ -65,7 +65,7 @@ const ContactPopupBox = styled.div`
     transform: translate(-50%, -50%);
     z-index: 10;
 
-    p{
+    .contactBody{
         display: flex;
         flex-direction: column;
         justify-content: center;

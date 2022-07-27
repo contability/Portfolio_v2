@@ -22,10 +22,10 @@ const Introduce = () => {
                 <div className="skills">
                     {D_skills.map((v: any, i) => (
                         <p key={i} className="skill">
-                            <p>{v.id}</p>
-                            <p>
-                                <input type="range" className="rangeInput" value={v.amount} max="100"/>
-                            </p>
+                            <span>{v.id}</span>
+                            <span className={"blockSpan"}>
+                                <input type="range" className="rangeInput" defaultValue={v.amount} max="100"/>
+                            </span>
                         </p>
                     ))}
                 </div>
@@ -97,7 +97,7 @@ const IntroduceBox = styledComponents.main`
             .skill{
                 width: 100%;
 
-                p{
+                span{
                     .rangeInput {
                         -webkit-appearance: none;
                         width: 100%;

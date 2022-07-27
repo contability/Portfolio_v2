@@ -168,6 +168,10 @@ const GlobalStyle = createGlobalStyle`
     #CustomToast {
         padding: 0 22px;
     }
+
+    .blockSpan{
+        display: block;
+    }
 `;
 
 export default GlobalStyle;
