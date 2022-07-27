@@ -15,6 +15,7 @@ import image_perfume from "../img/image_perfume.jpg";
 import { useDispatch } from "react-redux";
 import { setSelectMenu } from "../reducers/common";
 import { Link } from "react-router-dom";
+import FilteredImage from "../components/common/FilteredImage";
 
 
 
@@ -58,6 +59,7 @@ const Main = () => {
                         <div className="firstSection">
                             <div className="firstPanel">
                                 <img src={image_icecream} alt="" />
+                                {/* <FilteredImage targetImg={image_icecream}/> */}
                             </div>
                             <div className="colFlex">
                                 <p>
@@ -200,7 +202,6 @@ const MainBox : any = styledComponents.main`
                 .firstSection{
                     display: flex;
                     height: 741.3px;
-                    // height: 71.4vh;
 
                     .colFlex{
                         display:flex;
@@ -233,7 +234,7 @@ const MainBox : any = styledComponents.main`
                             &:nth-child(3){
                                 background: #fd4f55;
                                 height: 141.3px;
-                                // padding-top: 70px;
+                                padding: 2rem;
                                 font-size: 1.3rem;
                                 font-weight: 500;
                                 padding-top: 3.3rem;
@@ -287,20 +288,16 @@ const MainBox : any = styledComponents.main`
                     }
 
                     .panelHtml{
-                        // width: 35%;
-                        // height: 45vh;
                         height: 100%;
                         background: #ffd942;
 
                         .i_html{
-                            // width: 398px;
                             height: 100%;
                         }
                     }
 
                     .panelReact{
                         background: #fffaae;
-                        // height: 45vh;
                     }
                 }
                 // second section end

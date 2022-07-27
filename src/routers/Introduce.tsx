@@ -1,10 +1,12 @@
 import { useState } from "react";
 import styledComponents from "styled-components";
+import FilteredImage from "../components/common/FilteredImage";
 import LeftNavBar from "../components/left/LeftNavBar";
 import { D_skills } from "../data/D_Skills";
 import furium1 from "../img/image_furium1.jpg";
 import furium1_e from "../img/image_furium1_edit.jpg";
 import furium2 from "../img/image_furium2.jpg";
+import profile2 from "../img/image_profile2.jpg";
 
 const Introduce = () => {
     const [subImg, setSubImg] : any = useState(false);
@@ -34,12 +36,14 @@ const Introduce = () => {
                     <div>I'm SinHyung Jung</div>
                 </article>
                 <article className="profile_img">
-                        <img className={"mainImg"} src={furium2} alt="" 
+                        <img className={"mainImg"} src={profile2} alt="" 
                         onMouseEnter={(e : any) => hoverEventHandler(e.type) } 
                         onMouseLeave={(e : any) => hoverEventHandler(e.type) }
                         />
+                        {/* <FilteredImage targetImg={furium2}/> */}
+
                         {subImg && (
-                            <img className="subImg" src={furium1_e} alt="" 
+                            <img className="subImg" src={furium2} alt="" 
                             onMouseEnter={(e : any) => hoverEventHandler(e.type) } 
                             onMouseLeave={(e : any) => hoverEventHandler(e.type) }
                             />
