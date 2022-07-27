@@ -15,9 +15,6 @@ import image_perfume from "../img/image_perfume.jpg";
 import { useDispatch } from "react-redux";
 import { setSelectMenu } from "../reducers/common";
 import { Link } from "react-router-dom";
-import FilteredImage from "../components/common/FilteredImage";
-
-
 
 const Main = () => {
     const navigate = useNavigate();
@@ -32,7 +29,6 @@ const Main = () => {
     window.addEventListener("scroll", () => {
         scrollRef.current = window.scrollY;
         console.log(scrollRef.current);
-        
     });
 
     useEffect(()=>{
@@ -50,7 +46,7 @@ const Main = () => {
                 </header>
                 <section>
                     <article className="imgContents">
-                        <img className="imgReact" src={image_react} alt="" />
+                        <img className="imgReact" src={image_react} alt=""/>
                         <img src={image_cassette} alt="" className="cassette" />
                         <img src={image_clothes} alt="" className="clothes" />
                         <img src={image_perfume} alt="" className="perfume"/>

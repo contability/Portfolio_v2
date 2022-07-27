@@ -94,6 +94,7 @@ const ProjectsBox = styledComponents.main`
                 width: 100%;
                 border-radius: 8px;
                 cursor: pointer;
+                box-shadow: 9px 13px 6px #00000029;
             }
         }
 
@@ -106,6 +107,7 @@ const ProjectsBox = styledComponents.main`
             video{
                 width: 100%;
                 border-radius: 8px;
+                box-shadow: 9px 13px 6px #00000029;
             }
         }
     }

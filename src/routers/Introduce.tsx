@@ -142,17 +142,26 @@ const IntroduceBox = styledComponents.main`
         align-items: center;
         gap: 10vh;
         overflow-y: auto;
+        font-family: Arial,Helvetica,sans-serif;
+        
+
+        .header{
+            font-size: 4rem;
+            letter-spacing: 1rem;
+            font-weight: 900;
+        }
 
         .profile_img{
             height: 58vh;
-            width: 100%;
+            width: 45vw;
             display: flex;
             flex-direction: column;
-        align-items: center;
+            align-items: center;
 
             .mainImg{
                 height: 58vh;
                 position: relative;
+                box-shadow: 9px 13px 6px #00000029;
             }
 
             .subImg{
@@ -164,10 +173,12 @@ const IntroduceBox = styledComponents.main`
         }
 
         .blahblah{
-            // position: relative;
+            line-height: 1.9;
+            width: 45vw;
 
             & > div{
                 word-break: break-word;
+                font-weight: 500;
             }
         }
     }
