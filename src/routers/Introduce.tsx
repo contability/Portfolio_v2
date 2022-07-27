@@ -3,6 +3,7 @@ import styledComponents from "styled-components";
 import LeftNavBar from "../components/left/LeftNavBar";
 import { D_skills } from "../data/D_Skills";
 import furium1 from "../img/image_furium1.jpg";
+import furium1_e from "../img/image_furium1_edit.jpg";
 import furium2 from "../img/image_furium2.jpg";
 
 const Introduce = () => {
@@ -38,10 +39,10 @@ const Introduce = () => {
                         onMouseLeave={(e : any) => hoverEventHandler(e.type) }
                         />
                         {subImg && (
-                            <img className="subImg" src={furium1} alt="" 
+                            <img className="subImg" src={furium1_e} alt="" 
                             onMouseEnter={(e : any) => hoverEventHandler(e.type) } 
-                        onMouseLeave={(e : any) => hoverEventHandler(e.type) }
-                        />
+                            onMouseLeave={(e : any) => hoverEventHandler(e.type) }
+                            />
                         )}
                 </article>
                 <article className="blahblah">
@@ -140,16 +141,21 @@ const IntroduceBox = styledComponents.main`
 
         .profile_img{
             height: 58vh;
-            width: 50%;
-            text-align: center;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        align-items: center;
 
             .mainImg{
                 height: 58vh;
+                position: relative;
             }
 
             .subImg{
-                height: 58vh;
-                top: 0;
+                height: 38vh;
+                left: -0.1vw;
+                bottom: 39vh;
+                position: relative;
             }
         }
 

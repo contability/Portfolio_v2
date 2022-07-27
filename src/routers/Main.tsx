@@ -61,7 +61,7 @@ const Main = () => {
                             </div>
                             <div className="colFlex">
                                 <p>
-                                    <img src={image_js} alt="" />
+                                    <img className="hoverTarget" src={image_js} alt="" />
                                 </p>
                                 <p>
                                     <p>is a client,</p>
@@ -74,7 +74,7 @@ const Main = () => {
                                 <p>
                                     <p>about me</p>
                                     <p>
-                                        <Link to="/introduce" style={{textDecoration: "underline"}}>check out</Link>
+                                        <Link to="/introduce" style={{textDecoration: "underline"}}>check it out</Link>
                                     </p>
                                 </p>
                                 <p>1/5</p>
@@ -82,15 +82,17 @@ const Main = () => {
                         </div>
                         <div className="secondSection">
                             <p className="panelHtml">
-                                <img src={image_html} alt="" className="i_html" />
+                                <img src={image_html} alt="" className="i_html hoverTarget" />
                             </p>
                             <p className="panelReact">
-                                <img src={img_react} alt="" className="i_react" />
+                                <img src={img_react} alt="" className="i_react hoverTarget" />
                             </p>
                             <div className="secondPanel">
                                 <p>
                                     <p>NFT Market</p>
-                                    <p><Link to="/introduce" style={{textDecoration: "underline"}}>take a look</Link></p>
+                                    <p>
+                                        <Link to="/introduce" style={{textDecoration: "underline"}}>take a look</Link>
+                                    </p>
                                 </p>
                                 <p>2/5</p>
                             </div>
@@ -123,6 +125,14 @@ const MainBox : any = styledComponents.main`
         display: flex;
         flex-direction: column;
         position: relative;
+
+        .hoverTarget{
+            transition-duration: 0.3s;
+
+            &:hover{
+                padding: 3%;
+            }
+        }
 
         header{
             height: 35vh;
@@ -206,6 +216,7 @@ const MainBox : any = styledComponents.main`
 
                                 img{
                                     width: 100%;
+                                    // width: 835.188;
                                     height: 195%;
                                 }
                             }
@@ -246,6 +257,10 @@ const MainBox : any = styledComponents.main`
                         justify-content: space-between;
                         align-items: flex-start;
                         color: #ffffff;
+                        font-size: 1.7rem;
+                        font-weight: 900;
+                        letter-spacing: 0.6vw;
+                        padding: 3%;
                     }
                 }
                 //first section end

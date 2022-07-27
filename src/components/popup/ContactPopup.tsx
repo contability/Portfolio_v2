@@ -51,7 +51,17 @@ const ContactPopupBox = styled.div`
     width: 600px;
     height: 300px;
     border-radius: 20px;
-    background: #FFBF3A;
+    // background: linear-gradient(
+    //     180deg,
+    //     rgb(249, 158, 47, 1) 0%,
+    //     rgb(240, 121, 15, 1) 100%
+    // );
+
+    background: linear-gradient(
+        180deg, 
+        rgb(249,208,27,1) 0%, 
+        rgb(240,121,15,1) 100% 
+    );
     transform: translate(-50%, -50%);
     z-index: 10;
 
@@ -93,7 +103,9 @@ const ContactPopupBox = styled.div`
             div{
                 width: 160px;
                 border-radius: 20px;
-                background: orange;
+                // background: #f7af55;
+                background:  rgb(249, 158, 47, 1);
+                box-shadow: 0px 3px 6px #00000029;
                 text-align: center;
                 display: flex;
                 align-items: center;
@@ -111,13 +123,16 @@ const ContactPopupBox = styled.div`
                     .google{
                         width: 90px;
                     }
+                    
                     .naver{
                         height: 50px;
+                        border-radius: 10px;
                     }
                 }
     
                 & > button:hover{
                     transform: translateY(-2px);
+                    filter: brightness(0.7);
                 }
             }
         }
