@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import styledComponents from "styled-components";
 import image_react from "../img/image_react.jpg";
 import img_react from "../img/image_react.png";
-import image_blockchain from "../img/image_blockChain.png";
+import image_blockchain from "../img/image_blockchain.png";
 import image_css from "../img/image_css.png";
 import image_html from "../img/image_html.png";
 import image_java from "../img/image_java.png";
