@@ -1,21 +1,20 @@
 import { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import styledComponents from "styled-components";
-import LeftNavBar from "../components/left/LeftNavBar";
 import image_react from "../img/image_react.jpg";
 import img_react from "../img/image_react.png";
 import image_blockchain from "../img/image_blockchain.png";
 import image_css from "../img/image_css.png";
-import image_html from "../img/image_html.jpg";
+import image_html from "../img/image_html.png";
 import image_java from "../img/image_java.png";
 import image_js from "../img/image_js.png";
-import image_leftBg from "../img/image_leftBg.png";
 import image_cassette from "../img/image_cassette.jpg";
 import image_icecream from "../img/image_icecream.png";
 import image_clothes from "../img/image_clothes.jpg";
 import image_perfume from "../img/image_perfume.jpg";
 import { useDispatch } from "react-redux";
 import { setSelectMenu } from "../reducers/common";
+import { Link } from "react-router-dom";
 
 
 
@@ -61,10 +60,12 @@ const Main = () => {
                                 <img src={image_icecream} alt="" />
                             </div>
                             <div className="colFlex">
-                                <p></p>
                                 <p>
-                                    <p>is a developer,</p>
-                                    <p>developer,</p>
+                                    <img src={image_js} alt="" />
+                                </p>
+                                <p>
+                                    <p>is a client,</p>
+                                    <p>server,</p>
                                     <p>developer at heart</p>
                                 </p>
                                 <p>let's work together!</p>
@@ -72,17 +73,34 @@ const Main = () => {
                             <div className="secondPanel">
                                 <p>
                                     <p>about me</p>
-                                    <p>check it out</p>
+                                    <p>
+                                        <Link to="/introduce" style={{textDecoration: "underline"}}>check out</Link>
+                                    </p>
                                 </p>
                                 <p>1/5</p>
                             </div>
                         </div>
                         <div className="secondSection">
-                            <p>
+                            <p className="panelHtml">
                                 <img src={image_html} alt="" className="i_html" />
                             </p>
                             <p className="panelReact">
                                 <img src={img_react} alt="" className="i_react" />
+                            </p>
+                            <div className="secondPanel">
+                                <p>
+                                    <p>NFT Market</p>
+                                    <p><Link to="/introduce" style={{textDecoration: "underline"}}>take a look</Link></p>
+                                </p>
+                                <p>2/5</p>
+                            </div>
+                        </div>
+                        <div className="thirdSection">
+                            <p className="panelBlockChain">
+                                <img src={image_blockchain} alt="" />
+                            </p>
+                            <p className="panelJs">
+                                <img src={image_css} alt="" />
                             </p>
                         </div>
                     </article>
@@ -96,7 +114,8 @@ const MainBox : any = styledComponents.main`
     width: 100%;
     height: inherit;
     z-index: 0;
-    overflow-y: auto;
+    // overflow-y: auto;
+    overflow-y: none;
     
     .wrapped{
         width:100%;
@@ -170,8 +189,8 @@ const MainBox : any = styledComponents.main`
 
                 .firstSection{
                     display: flex;
-                    // height: 741.3px;
-                    height: 71.4vh;
+                    height: 741.3px;
+                    // height: 71.4vh;
 
                     .colFlex{
                         display:flex;
@@ -182,9 +201,13 @@ const MainBox : any = styledComponents.main`
                             color: #181818;
                             &:nth-child(1){
                                 height: 400px;
-                                // height: inherit;
                                 background: #ffd942;
                                 padding: 1.5rem;
+
+                                img{
+                                    width: 100%;
+                                    height: 195%;
+                                }
                             }
                             
                             &:nth-child(2){
@@ -210,9 +233,11 @@ const MainBox : any = styledComponents.main`
                     .firstPanel{
                         width: 191px;
                         background: #4aad8c;
-                    }
-
                         
+                        & > img{
+                            width: inherit;
+                        }
+                    }
 
                     .secondPanel{
                         flex: 1;
@@ -220,26 +245,63 @@ const MainBox : any = styledComponents.main`
                         flex-direction: column;
                         justify-content: space-between;
                         align-items: flex-start;
+                        color: #ffffff;
                     }
                 }
-
+                //first section end
+                
+                //second section start
                 .secondSection{
                     display: flex;
                     flex-direction: row-reverse;
+                    // height: 180.875px;
+                    height: 276.625px;
+                    color: #ffffff;
 
                     & > p{
-                        height: 34vh;
-                        // height: 352.914px;
+                        // height: 52vh;
+                        height: 100%;
+                        text-align: center;
+                        display: flex;
+                        align-items: center; 
+                        color: #ffffff;
+                        
                         img{
+                            height: 80%;
+                        }
+                    }
+
+                    .panelHtml{
+                        // width: 35%;
+                        // height: 45vh;
+                        height: 100%;
+                        background: #ffd942;
+
+                        .i_html{
+                            // width: 398px;
                             height: 100%;
                         }
                     }
 
                     .panelReact{
                         background: #fffaae;
+                        // height: 45vh;
                     }
                 }
+                // second section end
 
+                // third section start
+                .thirdSection{
+                    height: 180.875px;
+                    display: flex;
+
+                    p{
+                        img{
+                            height: 100%;
+                        }
+                    }
+                    
+                }
                 
             }
         }
