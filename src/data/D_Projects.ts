@@ -26,7 +26,7 @@ const D_Projects: projectsType[] = [{
     name: "GIS 공간 정보 시스템",
     start: "2020-04",
     end: "2022-05",
-    summary: "유의미한 공간 정보를 간단하고 효과적으로 활용하기 위한 시스템으로 비용 절감 및 업무 효율 향상",
+    summary: "유의미한 공간 정보를 간단하고 효과적으로 활용하기 위한 시스템으로 비용 절감 및 업무 효율 향상을 목적으로 함",
     desc: [
         "spring framework MVC 패턴 SW 개발",
         "openLayers 라이브러리를 활용한 지도 시스템 개발",
@@ -44,7 +44,7 @@ const D_Projects: projectsType[] = [{
         "oracle",
         "msSQL",
         "postgreSQL",
-        "msSQL"
+        "mySQL"
     ],
     img:[
         img_projects_1_1,
@@ -68,6 +68,7 @@ const D_Projects: projectsType[] = [{
         "javascript",
         "react",
         "mySQL",
+        "materialUI",
         "AWS"
     ],img:[
         img_projects_3_1,
@@ -84,12 +85,14 @@ const D_Projects: projectsType[] = [{
         "React front 개발",
         "materialUI를 활용한 UI 구현",
         "smart contract 배포 및 활용",
+        "api 구현"
     ],
     usedSkills: [
         "javascript",
         "react",
         "nodeJs",
         "mySQL",
+        "materialUI",
         "solidity",
     ],img:[
         img_projects_2_1,

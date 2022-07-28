@@ -4,9 +4,11 @@ import styled from "styled-components";
 const MessagePopup = ({ off, visible} : any) => {
 
     useEffect(() => {
-        setTimeout(() => {
-            off();
-        }, 4000);
+        if(visible){
+            setTimeout(() => {
+                off();
+            }, 4000);
+        }
     }, [visible]);
 
     return (
@@ -23,8 +25,14 @@ const MessagePopupBox = styled.div`
     height: 50px;
     transform: translate(-50%, -50%);
     left: 50%;
-    top: -45px;
+    top: -35px;
     position: fixed;
+
+    p{
+        height: inherit;
+        padding-top: 12px;
+        text-align: center;
+    }
 
     .hidden{
         visibility: hidden;

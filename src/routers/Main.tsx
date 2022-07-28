@@ -400,7 +400,7 @@ const MainBox : any = styledComponents.main`
 
                     .panelHtml{
                         height: 100%;
-                        width: 30vw;
+                        width: 21vw;
                         background: #ffd942;
 
                         .i_html{
@@ -430,7 +430,7 @@ const MainBox : any = styledComponents.main`
 
                 // third section start
                 .thirdSection{
-                    height: 397.875px;
+                    height: 577px;
                     display: flex;
                     flex-direction: row;
                     align-items: flex-start;
@@ -448,7 +448,7 @@ const MainBox : any = styledComponents.main`
 
                         .panelBlockChain{
                             background: #4aad8c;
-                            width: 40.4vw;
+                            width: 49.4vw;
                             height: 33%;
                             text-align: center;
                         }
@@ -466,7 +466,7 @@ const MainBox : any = styledComponents.main`
                                 .seperator{
                                     background: #fffaae;
                                     width: 100%;
-                                    height: 20%;
+                                    height: 40%;
                                 }
                             }
                         }
