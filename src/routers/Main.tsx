@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styledComponents from "styled-components";
 import image_react from "../img/image_react.jpg";
@@ -18,28 +18,58 @@ import { useDispatch } from "react-redux";
 import { setSelectMenu } from "../reducers/common";
 import { Link } from "react-router-dom";
 
+import project01 from "../img/projects/image_projects_1_1.jpg";
+import project02 from "../img/projects/image_projects_2_1.png";
+import project03 from "../img/projects/image_projects_3_1.png";
+import project04 from "../assets/movie/mov_project_4.mp4";
+
 const Main = () => {
     const navigate = useNavigate();
-    const scrollRef = useRef(0);
+    // const scrollRef = useRef(0);
     const dispatch = useDispatch();
+
+    // const clipStyle01 = 
+    // clip: rect(
+    //     0px, 
+    //     91vw, 
+    //     100vh,
+    //     0px
+    // );
+
 
     // useEffect(() => {
     //     console.log(scrollRef.current);
+    // }, [window.scrollY]);
+
+    window.addEventListener("scroll", () => {
+        // scrollRef.current = window.scrollY;
+        console.log(document.documentElement.scrollTop);
+    });
+
+    // useEffect(() => {
+    //     console.log("weflkn");
         
     // }, [window]);
 
-    window.addEventListener("scroll", () => {
-        scrollRef.current = window.scrollY;
-        console.log(scrollRef.current);
-    });
+    const scroll = (e : any) => {
+        console.log(e);
+    };
+
+    
 
     useEffect(()=>{
         dispatch(setSelectMenu(""));
+
+        window.addEventListener("scroll", () => {
+            // scrollRef.current = window.scrollY;
+            console.log(document.documentElement.scrollTop);
+        });
     }, []);
 
     return(
         <MainBox 
-        scrollRef={scrollRef.current}
+        // scrollRef={scrollRef.current}
+        onScroll={(e : any) => scroll(e)}
         >
             <div className="wrapped">
                 <header>
@@ -48,10 +78,13 @@ const Main = () => {
                 </header>
                 <section>
                     <article className="imgContents">
-                        <img className="imgReact" src={image_react} alt=""/>
-                        <img src={image_cassette} alt="" className="cassette" />
-                        <img src={image_clothes} alt="" className="clothes" />
-                        <img src={image_perfume} alt="" className="perfume"/>
+                        {/* <img className="imgReact" src={image_react} alt=""/> */}
+                        {/* <img src={project01} alt="" className="project01" /> */}
+                        {/* <img src={project02} alt="" className="project02" /> */}
+                        {/* <img src={project03} alt="" className="project03"/> */}
+                        <video className="project04" autoPlay={true} loop={true}>
+                            <source src={project04} type="video/mp4"/>
+                        </video>
                     </article>
                     <article className="postContents">
                         <div className="firstSection">
@@ -274,31 +307,46 @@ const MainBox : any = styledComponents.main`
             .imgContents{
                 & > .imgReact{
                     width: 91vw;
+                    // height: 100%;
                     top: 0;
                     position: fixed;
-                    z-index: 3;
+                    z-index: 6;
                     clip: rect(
                         0px, 
                         91vw, 
                         100vh,
                         0px
-                        );
+                    );
                 }
 
-                & > .perfume{
-                    width: 15%;
+                & > .project04{
+                    z-index: 5;
+                    top: 0;
+                    position: fixed;
+                    // width: 91vw;
+                    height: 100%;
+                }
+
+                & > .project03{
+                    height: 100%;
                     right: 0;
                     position: fixed;
+                    z-index: 4;
+                    top: 0;
                 }
-
-                & > .cassette{
-                    width: 52vw;
+                
+                & > .project01{
+                    z-index: 3;
+                    height: 100%;
                     position: fixed;
+                    top: 0;
                 }
-
-                & > .clothes{
-                    width: 52vw;
+                
+                & > .project02{
+                    z-index: 2;
+                    height: 100%;
                     position: fixed;
+                    top: 0;
                 }
             }
 
