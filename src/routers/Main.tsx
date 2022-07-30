@@ -25,51 +25,36 @@ import project04 from "../assets/movie/mov_project_4.mp4";
 
 const Main = () => {
     const navigate = useNavigate();
-    // const scrollRef = useRef(0);
     const dispatch = useDispatch();
-
-    // const clipStyle01 = 
-    // clip: rect(
-    //     0px, 
-    //     91vw, 
-    //     100vh,
-    //     0px
-    // );
-
-
-    // useEffect(() => {
-    //     console.log(scrollRef.current);
-    // }, [window.scrollY]);
-
-    window.addEventListener("scroll", () => {
-        // scrollRef.current = window.scrollY;
-        console.log(document.documentElement.scrollTop);
-    });
-
-    // useEffect(() => {
-    //     console.log("weflkn");
-        
-    // }, [window]);
+    const [windowHeight, setWindowHeight] = useState<number>(0);
 
     const scroll = (e : any) => {
-        console.log(e);
-    };
+        console.log(e.target.scrollTop);
+        let scrollTop = e.target.scrollTop;
+        // console.log(window.innerHeight);
+        
+        
+        //imReact 0~345부터 줄이기
+        //project01 345 ~ 622
+        //project02 813 ~ 1045
+        // project03 622 ~ 1102
+        // project04 1201 ~ 1601
 
-    
+
+    };
 
     useEffect(()=>{
         dispatch(setSelectMenu(""));
-
-        window.addEventListener("scroll", () => {
-            // scrollRef.current = window.scrollY;
-            console.log(document.documentElement.scrollTop);
+        window.addEventListener("resize", () => {
+            setWindowHeight(window.innerHeight);
+            console.log(window.innerHeight);
+            
         });
     }, []);
 
     return(
         <MainBox 
-        // scrollRef={scrollRef.current}
-        onScroll={(e : any) => scroll(e)}
+            onScroll={(e : any) => scroll(e)}
         >
             <div className="wrapped">
                 <header>
@@ -78,13 +63,13 @@ const Main = () => {
                 </header>
                 <section>
                     <article className="imgContents">
-                        {/* <img className="imgReact" src={image_react} alt=""/> */}
+                        <img className="imgReact" src={image_react} alt=""/>
                         {/* <img src={project01} alt="" className="project01" /> */}
                         {/* <img src={project02} alt="" className="project02" /> */}
                         {/* <img src={project03} alt="" className="project03"/> */}
-                        <video className="project04" autoPlay={true} loop={true}>
+                        {/* <video className="project04" autoPlay={true} loop={true}>
                             <source src={project04} type="video/mp4"/>
-                        </video>
+                        </video> */}
                     </article>
                     <article className="postContents">
                         <div className="firstSection">
