@@ -6,6 +6,7 @@ import { D_skills } from "../data/D_Skills";
 import furium1 from "../img/image_furium1.jpg";
 import furium1_e from "../img/image_furium1_edit.jpg";
 import furium2 from "../img/image_furium2.jpg";
+import profile from "../img/image_profile.JPG";
 import profile2 from "../img/image_profile2.jpg";
 
 const Introduce = () => {
@@ -36,7 +37,7 @@ const Introduce = () => {
                     <div>I'm SinHyung Jung</div>
                 </article>
                 <article className="profile_img">
-                        <img className={"mainImg"} src={profile2} alt="" 
+                        <img className={"mainImg"} src={profile} alt="" 
                         onMouseEnter={(e : any) => hoverEventHandler(e.type) } 
                         onMouseLeave={(e : any) => hoverEventHandler(e.type) }
                         />
