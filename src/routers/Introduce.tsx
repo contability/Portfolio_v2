@@ -6,7 +6,7 @@ import { D_skills } from "../data/D_Skills";
 import furium1 from "../img/image_furium1.jpg";
 import furium1_e from "../img/image_furium1_edit.jpg";
 import furium2 from "../img/image_furium2.jpg";
-import profile from "../img/image_profile.JPG";
+import profile from "../img/image_profile.jpg";
 import profile2 from "../img/image_profile2.jpg";
 
 const Introduce = () => {
