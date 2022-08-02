@@ -1,8 +1,36 @@
+import { useEffect } from "react";
+import { useInView } from "react-intersection-observer";
+import { useLocation } from "react-router-dom";
 import styledComponents from "styled-components";
 import LeftNavBar from "../components/left/LeftNavBar";
 import { D_Projects, projectsType } from "../data/D_Projects";
 
+interface typeLocation{
+    id: string;
+}
+
 const Projects = () => {
+    const location = useLocation();
+
+    const [gisRef, gisInView, gisEntry ] = useInView();
+    const [nftMarketRef, nftMarketInView, nftMarketEntry ] = useInView();
+    const [defiRef, defiInView, defiEntry ] = useInView();
+    const [exchangeRef, exchangeInView, exchangeEntry ] = useInView();
+
+    const scrollTo : Function = () => {
+            const state = location.state as typeLocation; 
+            const id = state.id;
+            console.log('id', id);
+    };
+
+    const initRef : Function = (prjName : string) => {
+        
+    };
+
+    useEffect(() => {
+        scrollTo();
+    }, []);
+
     return(
         <ProjectsBox>
             {D_Projects.map((prj: projectsType, i) => (
@@ -37,6 +65,7 @@ const Projects = () => {
                             ))}
                         </ul>
                     </div>
+                    {/* {initRef(prj.name)} */}
                 </article>
             ))}
         </ProjectsBox>

@@ -1,20 +1,39 @@
 import { useEffect, useState } from "react";
 
-const useScroll = () => {
-    const [scrollY, setScrollY] = useState<number>(0);
+const useScroll = (e : any) => {
+    // const [scrollY, setScrollY] = useState<number>(0);
 
-    const listener = () => {
-        setScrollY(window.pageYOffset);
-    };
+    // const listener = () => {
+    //     setScrollY(window.pageYOffset);
+    // };
 
-    useEffect(() => {
-        window.addEventListener("scroll", listener);
-        return () => {
-            window.removeEventListener("scroll", listener);
-        }
-    });
+    // useEffect(() => {
+    //     window.addEventListener("scroll", listener);
+    //     return () => {
+    //         window.removeEventListener("scroll", listener);
+    //     }
+    // });
 
-    return scrollY;
+    // return scrollY;
+
+    let scrollTop = e.target.scrollTop;
+
 };
 
-export { useScroll };
+const useOnScreen = (ref : any) => {
+    const [isIntersecting, setIntersecting] = useState(false);
+
+    const observer = new IntersectionObserver(([entry]) => setIntersecting(entry.isIntersecting));
+
+    // useEffect(() => {
+    //     observer.observe(ref.current);
+    //     return () => observer.disconnect();
+    // }, [])
+
+    return isIntersecting;
+}
+
+export { 
+    useScroll
+    ,useOnScreen
+};

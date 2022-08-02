@@ -12,6 +12,7 @@ import img_projects_3_3 from "../img/projects/image_projects_3_3.png";
 import mov_projects_4 from "../assets/movie/mov_project_4.mp4";
 
 export interface projectsType{
+    // id: number;
     name: string;
     start: string;
     end: string;
@@ -23,6 +24,7 @@ export interface projectsType{
 }
 
 const D_Projects: projectsType[] = [{
+    // id: 1,
     name: "GIS 공간 정보 시스템",
     start: "2020-04",
     end: "2022-05",
