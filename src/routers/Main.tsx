@@ -36,9 +36,6 @@ const Main = () => {
         console.log(introduceInView, introduceEntry, scrollTop);
 
         console.log(introduceEntry?.intersectionRect.top);    // 현재 entry가 화면에 나타나고 있다면 어느 위치에 뜨고 있는지 위치 값들 뜨는데 현재 top 값만 가져왔음
-        
-        
-        
         // console.log(useOnScreen(testRef));
 
         // console.log({
@@ -53,8 +50,8 @@ const Main = () => {
         <MainBox 
             // onScroll={(e : any) => scrollEvent(e)}
             gisImg={project01}
-            nftImg={project03}
             defiImg={project02}
+            nftImg={project03}
             xchgImg={project04}
         >
             <div className="wrapped">
@@ -113,7 +110,7 @@ const Main = () => {
                                     <span>GIS</span>
                                     <span className={"blockSpan"} style={{textDecoration: "underline", cursor:"pointer"}} onClick={() => navigate("/projects", {
                                         state: {
-                                            id : "project01"
+                                            id : 1
                                         }
                                     })}>
                                         take a look
@@ -134,7 +131,7 @@ const Main = () => {
                                                 <span>NFT Market</span>
                                                 <span className={"blockSpan"} style={{textDecoration: "underline", cursor:"pointer"}} onClick={() => navigate("/projects", {
                                                     state: {
-                                                        id : "project03"
+                                                        id : 3
                                                     }
                                                 })}>
                                                     take a look
@@ -156,7 +153,7 @@ const Main = () => {
                                         <span>DeFi</span>
                                         <span className={"blockSpan"} style={{textDecoration: "underline", cursor:"pointer"}} onClick={() => navigate("/projects", {
                                                     state: {
-                                                        id : "project02"
+                                                        id : 2
                                                     }
                                                 })}>
                                                     take a look
@@ -195,7 +192,7 @@ const Main = () => {
                                         <span>exchange</span>
                                         <span className={"blockSpan"} style={{textDecoration: "underline", cursor:"pointer"}} onClick={() => navigate("/projects", {
                                                     state: {
-                                                        id : "project04"
+                                                        id : 4
                                                     }
                                                 })}>
                                                     take a look

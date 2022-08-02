@@ -6,7 +6,7 @@ import LeftNavBar from "../components/left/LeftNavBar";
 import { D_Projects, projectsType } from "../data/D_Projects";
 
 interface typeLocation{
-    id: string;
+    id: number;
 }
 
 const Projects = () => {
@@ -20,12 +20,37 @@ const Projects = () => {
     const scrollTo : Function = () => {
             const state = location.state as typeLocation; 
             const id = state.id;
-            console.log('id', id);
+            
+            switch (id) {
+            case 1:
+                // gisRef.scrollIntoView();
+            case 2:
+                return defiRef;
+            case 3:
+                return nftMarketRef;
+            case 4:
+                return exchangeRef;
+            default:
+                break;
+        }
     };
 
-    const initRef : Function = (prjName : string) => {
+    // const initRef : Function = (prjId : number) => {
+    //     console.log(prjId);
         
-    };
+    //     switch (prjId) {
+    //         case 1:
+    //             return gisRef;
+    //         case 2:
+    //             return defiRef;
+    //         case 3:
+    //             return nftMarketRef;
+    //         case 4:
+    //             return exchangeRef;
+    //         default:
+    //             break;
+    //     }
+    // };
 
     useEffect(() => {
         scrollTo();
@@ -34,7 +59,13 @@ const Projects = () => {
     return(
         <ProjectsBox>
             {D_Projects.map((prj: projectsType, i) => (
-                <article key={i}>
+                <article key={i} ref={
+                    (prj.id === 1 && gisRef)
+                    || (prj.id === 2 && defiRef)
+                    || (prj.id === 3 && nftMarketRef)
+                    || (prj.id === 4 && exchangeRef)
+                    || ""
+                    }>
                     <div className="prjHeader">
                         <h1>{prj.name}</h1>
                         <span>{prj.start}</span>
@@ -65,7 +96,6 @@ const Projects = () => {
                             ))}
                         </ul>
                     </div>
-                    {/* {initRef(prj.name)} */}
                 </article>
             ))}
         </ProjectsBox>
