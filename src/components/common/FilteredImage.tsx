@@ -4,7 +4,7 @@ import filter from "../../assets/common/image_filter.jpg";
 
 const FilteredImage = ( {targetImg} : any) => {
     
-    const targetImgRef = useRef();
+    const targetImgRef = useRef<any>();
 
     // const div = useCallback((node : any) => {
     //     if (node !== null) {
@@ -19,7 +19,7 @@ const FilteredImage = ( {targetImg} : any) => {
     return (
         <FilteredImageBox>
             <img src={filter} alt="" className="filter" />
-            <img src={targetImg} alt="" className="target" ref={targetImgRef.current}/>
+            <img src={targetImg} alt="" className="target" ref={targetImgRef}/>
         </FilteredImageBox>
     );
 };

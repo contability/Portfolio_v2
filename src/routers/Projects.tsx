@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { useInView } from "react-intersection-observer";
 import { useLocation } from "react-router-dom";
 import styledComponents from "styled-components";
@@ -12,27 +12,36 @@ interface typeLocation{
 const Projects = () => {
     const location = useLocation();
 
-    const [gisRef, gisInView, gisEntry ] = useInView();
-    const [nftMarketRef, nftMarketInView, nftMarketEntry ] = useInView();
-    const [defiRef, defiInView, defiEntry ] = useInView();
-    const [exchangeRef, exchangeInView, exchangeEntry ] = useInView();
+    // const [gisRef, gisInView, gisEntry ] : any = useInView();
+    // const [nftMarketRef, nftMarketInView, nftMarketEntry ] : any = useInView();
+    // const [defiRef, defiInView, defiEntry ] : any = useInView();
+    // const [exchangeRef, exchangeInView, exchangeEntry ] : any = useInView();
+
+    const gisRef = useRef<null | any>();
+    const nftMarketRef = useRef<null | any>();
+    const defiRef = useRef<null | any>();
+    const exchangeRef = useRef<null | any>();
 
     const scrollTo : Function = () => {
             const state = location.state as typeLocation; 
-            const id = state.id;
+            const id = state?.id;
             
             switch (id) {
-            case 1:
-                // gisRef.scrollIntoView();
-            case 2:
-                return defiRef;
-            case 3:
-                return nftMarketRef;
-            case 4:
-                return exchangeRef;
-            default:
-                break;
-        }
+                case 1:
+                    gisRef?.current?.scrollIntoView({behavior: "smooth"});
+                    break;
+                case 2:
+                    defiRef?.current?.scrollIntoView({behavior: "smooth"});
+                    break;
+                case 3:
+                    nftMarketRef?.current?.scrollIntoView({behavior: "smooth"});
+                    break;
+                case 4:
+                    exchangeRef?.current?.scrollIntoView({behavior: "smooth"});
+                    break;
+                default:
+                    break;
+            }
     };
 
     // const initRef : Function = (prjId : number) => {

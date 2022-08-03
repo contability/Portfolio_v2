@@ -15,9 +15,10 @@ import { setSelectMenu } from "../reducers/common";
 import { Link } from "react-router-dom";
 
 import project01 from "../img/projects/image_projects_1_1_thumb.jpg";
-import project02 from "../img/projects/image_projects_2_1.png";
+import project02 from "../img/projects/image_projects_2_1_thumb.png";
 import project03 from "../img/projects/image_projects_3_1_thumb.png";
 import project04 from "../img/projects/image_projects_4_thumb.png";
+import filter from "../assets/common/image_filter.jpg";
 import { useOnScreen } from "../utils/customHook";
 import { useInView } from "react-intersection-observer";
 
@@ -28,7 +29,6 @@ const Main = () => {
 
     // const [ref, inView, entry ] = useInView();       // [요소 지정 Ref 속성 값(이거 아무 dom에도 안넣어주면 다른 정보도 아무 것도 안뜸), 현재 화면에 보이는지 아닌지, ref로 지정된 dom을 분석한 정보가 담김 ]
     const [introduceRef, introduceInView, introduceEntry ] = useInView();
-    
 
     const scrollEvent = (e : any) => {
         // let scrollTop = e.target.scrollTop;          // 사용 안함
@@ -36,14 +36,20 @@ const Main = () => {
         console.log(introduceInView, introduceEntry, scrollTop);
 
         console.log(introduceEntry?.intersectionRect.top);    // 현재 entry가 화면에 나타나고 있다면 어느 위치에 뜨고 있는지 위치 값들 뜨는데 현재 top 값만 가져왔음
-        // console.log(useOnScreen(testRef));
+    };
 
-        // console.log({
-        //     inView,
-        //     testRef,
-        //     entry
-        // });
-        // console.log(testRef);
+    const navigateHandler = (type: string, id: null | number) => {
+        if(type==="1"){
+            dispatch(setSelectMenu("about me"));
+            navigate("/introduce");
+        }else{
+            dispatch(setSelectMenu("projects"));
+            navigate("/projects", {
+                state : {
+                    id
+                }
+            });
+        }
     };
 
     return(
@@ -91,8 +97,9 @@ const Main = () => {
                             <div className="secondPanel" ref={introduceRef}>
                                 <p>
                                     <span>about me</span>
-                                    <span className={"blockSpan"}>
-                                        <Link to="/introduce" style={{textDecoration: "underline"}}>check it out</Link>
+                                    <span className={"blockSpan"} style={{textDecoration: "underline", cursor:"pointer"}} onClick={() => navigateHandler("1", null)}>
+                                        check it out
+                                        {/* <Link to="/introduce" style={{textDecoration: "underline"}}>check it out</Link> */}
                                     </span>
                                 </p>
                                 <p>1/5</p>
@@ -108,11 +115,7 @@ const Main = () => {
                             <div className="secondPanel">
                                 <p>
                                     <span>GIS</span>
-                                    <span className={"blockSpan"} style={{textDecoration: "underline", cursor:"pointer"}} onClick={() => navigate("/projects", {
-                                        state: {
-                                            id : 1
-                                        }
-                                    })}>
+                                    <span className={"blockSpan"} style={{textDecoration: "underline", cursor:"pointer"}} onClick={() => navigateHandler("2", 1)}>
                                         take a look
                                     </span>
                                 </p>
@@ -129,11 +132,7 @@ const Main = () => {
                                         <div className="toLetter nftPanel">
                                             <p>
                                                 <span>NFT Market</span>
-                                                <span className={"blockSpan"} style={{textDecoration: "underline", cursor:"pointer"}} onClick={() => navigate("/projects", {
-                                                    state: {
-                                                        id : 3
-                                                    }
-                                                })}>
+                                                <span className={"blockSpan"} style={{textDecoration: "underline", cursor:"pointer"}} onClick={() => navigateHandler("2", 3)}>
                                                     take a look
                                                 </span>
                                             </p>
@@ -151,11 +150,7 @@ const Main = () => {
                                 <div className={"toLetter h_100"}>
                                     <p>
                                         <span>DeFi</span>
-                                        <span className={"blockSpan"} style={{textDecoration: "underline", cursor:"pointer"}} onClick={() => navigate("/projects", {
-                                                    state: {
-                                                        id : 2
-                                                    }
-                                                })}>
+                                        <span className={"blockSpan"} style={{textDecoration: "underline", cursor:"pointer"}} onClick={() => navigateHandler("2", 2)}>
                                                     take a look
                                         </span>
                                     </p>
@@ -190,11 +185,7 @@ const Main = () => {
                                 <div className="toLetter">
                                     <p>
                                         <span>exchange</span>
-                                        <span className={"blockSpan"} style={{textDecoration: "underline", cursor:"pointer"}} onClick={() => navigate("/projects", {
-                                                    state: {
-                                                        id : 4
-                                                    }
-                                                })}>
+                                        <span className={"blockSpan"} style={{textDecoration: "underline", cursor:"pointer"}} onClick={() => navigateHandler("2", 4)}>
                                                     take a look
                                         </span>
                                     </p>

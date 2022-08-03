@@ -38,7 +38,10 @@ const LeftNavBar = () => {
                     <img src={image_leftBg} alt="" />
                 </picture>
                 <div className="menuContent">
-                    <div className="portfolio" onClick={() => {navigate("/")}}>
+                    <div className="portfolio" onClick={() => {
+                        dispatch(setSelectMenu(""));
+                        navigate("/");
+                        }}>
                         <div>PORT</div>
                         <div>FOLIO</div>
                     </div>
