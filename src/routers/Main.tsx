@@ -207,6 +207,7 @@ const MainBox : any = styledComponents.main<any>`               // expl: ts에�
     height: inherit;
     z-index: 0;
     overflow-y: auto;
+    overflow-x: hidden;
 
     // expl: react-fast-marquee css.
     // 이렇게 클래스 먹여서 속성 주면 알아서 먹음.
