@@ -88,6 +88,10 @@ const IntroduceBox = styledComponents.main`
         gap: 5vh;
         overflow-y: auto;
 
+        h1{
+            color: #4AAD8C;
+        }
+
         .skills{
             display: flex;
             flex-direction: column;
