@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styledComponents from "styled-components";
 import image_react from "../img/image_react.jpg";
@@ -12,12 +12,11 @@ import image_db from "../img/image_db.png";
 import Marquee from "react-fast-marquee";
 import { useDispatch } from "react-redux";
 import { setSelectMenu } from "../reducers/common";
-import { Link } from "react-router-dom";
 
 import project01 from "../img/projects/image_projects_1_1_thumb.jpg";
-import project02 from "../img/projects/image_projects_2_1_thumb.png";
-import project03 from "../img/projects/image_projects_3_1_thumb.png";
-import project04 from "../img/projects/image_projects_4_thumb.png";
+import project02 from "../img/projects/image_projects_2_1_thumb.jpg";
+import project03 from "../img/projects/image_projects_3_1_thumb.jpg";
+import project04 from "../img/projects/image_projects_4_thumb.jpg";
 import filter from "../assets/common/image_filter.jpg";
 import { useOnScreen } from "../utils/customHook";
 import { useInView } from "react-intersection-observer";
