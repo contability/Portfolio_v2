@@ -1,23 +1,20 @@
 import { useEffect, useState } from "react";
 
 const useScroll = (e : any) => {
-    // const [scrollY, setScrollY] = useState<number>(0);
+    const [scrollY, setScrollY] = useState<number>(0);
 
-    // const listener = () => {
-    //     setScrollY(window.pageYOffset);
-    // };
+    const listener = () => {
+        setScrollY(window.pageYOffset);
+    };
 
-    // useEffect(() => {
-    //     window.addEventListener("scroll", listener);
-    //     return () => {
-    //         window.removeEventListener("scroll", listener);
-    //     }
-    // });
+    useEffect(() => {
+        window.addEventListener("scroll", listener);
+        return () => {
+            window.removeEventListener("scroll", listener);
+        }
+    });
 
-    // return scrollY;
-
-    let scrollTop = e.target.scrollTop;
-
+    return scrollY;
 };
 
 const useOnScreen = (ref : any) => {
@@ -25,10 +22,10 @@ const useOnScreen = (ref : any) => {
 
     const observer = new IntersectionObserver(([entry]) => setIntersecting(entry.isIntersecting));
 
-    // useEffect(() => {
-    //     observer.observe(ref.current);
-    //     return () => observer.disconnect();
-    // }, [])
+    useEffect(() => {
+        observer.observe(ref.current);
+        return () => observer.disconnect();
+    }, [])
 
     return isIntersecting;
 }

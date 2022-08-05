@@ -14,7 +14,7 @@ const MessagePopup = ({ off, visible} : any) => {
     return (
         <MessagePopupBox>
             <p className={`messageBox hidden ${visible? "appear":"disappear"}`}>
-                copied success
+                copied success to clipBoard
             </p>
         </MessagePopupBox>
     );

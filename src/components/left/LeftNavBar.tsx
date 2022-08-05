@@ -1,7 +1,7 @@
 import styledComponents from "styled-components";
 import image_leftBg from "../../img/image_leftBg.png";
 import { LeftNavList, list } from "../../data/D_LeftNavList";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ContactPopup from "../popup/ContactPopup";
 import PopupBg from "../common/PopupBg";
