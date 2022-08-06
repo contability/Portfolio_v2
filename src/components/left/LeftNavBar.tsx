@@ -1,18 +1,21 @@
 import styledComponents from "styled-components";
 import image_leftBg from "../../img/image_leftBg.png";
 import { LeftNavList, list } from "../../data/D_LeftNavList";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ContactPopup from "../popup/ContactPopup";
 import PopupBg from "../common/PopupBg";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { setSelectMenu } from "../../reducers/common";
+import Spinner from "../common/Spinner";
 
 const LeftNavBar = () => {
     const navigate = useNavigate();
     const [contactPopup, setContactPopup] = useState(false);
+    const [onSpinner, setOnSpinner] = useState(false);
 
+    const isSpinner = useSelector((state: any)=> state.common.isSpinner);
     const selectMenu = useSelector((state : any) => state.common.selectMenu);
     const dispatch = useDispatch();
 
@@ -32,36 +35,56 @@ const LeftNavBar = () => {
                 break;
         }
     };
+
+    useEffect(() => {
+        const locationHash : string = window.location.hash;
+        const spltHash : string[] = locationHash.split("/");
+
+        if(spltHash[spltHash.length -1] === "projects" && isSpinner < 1){
+            setOnSpinner(true);
+            setTimeout(()=>{
+                setOnSpinner(false);
+            }, 2000);
+        }
+    });
+
     return (
         <LeftNavBarBox>
-                <picture>
-                    <img src={image_leftBg} alt="" />
-                </picture>
-                <div className="menuContent">
-                    <div className="portfolio" onClick={() => {
-                        dispatch(setSelectMenu(""));
-                        navigate("/");
-                        }}>
-                        <div>PORT</div>
-                        <div>FOLIO</div>
-                    </div>
-                    <nav>
-                        <ul>
-                            {list.map((v: LeftNavList, i : number) => (
-                                <li key={i} className={v.id === selectMenu ? "on" : ""}>
-                                    <button onClick={()=>{buttonEvent(v)}}>{v.id}</button>
-                                </li>
-                            ))}
-                        </ul>
-                    </nav>
+            <picture>
+                <img src={image_leftBg} alt="" />
+            </picture>
+            <div className="menuContent">
+                <div className="portfolio" onClick={() => {
+                    dispatch(setSelectMenu(""));
+                    navigate("/");
+                    }}>
+                    <div>PORT</div>
+                    <div>FOLIO</div>
                 </div>
-                
-                {contactPopup && (
-                    <>
-                        <ContactPopup off={setContactPopup}/>
-                        <PopupBg off={setContactPopup} blur={true}/>
-                    </>
-                )}
+                <nav>
+                    <ul>
+                        {list.map((v: LeftNavList, i : number) => (
+                            <li key={i} className={v.id === selectMenu ? "on" : ""}>
+                                <button onClick={()=>{buttonEvent(v)}}>{v.id}</button>
+                            </li>
+                        ))}
+                    </ul>
+                </nav>
+            </div>
+            
+            {contactPopup && (
+                <>
+                    <ContactPopup off={setContactPopup}/>
+                    <PopupBg off={setContactPopup} blur={true}/>
+                </>
+            )}
+
+            {onSpinner && (
+                <>
+                    <Spinner/>
+                    <PopupBg blur={ true }/>
+                </>
+            )}
         </LeftNavBarBox>
     );
 };

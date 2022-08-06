@@ -33,7 +33,6 @@ const Main = () => {
         // let scrollTop = e.target.scrollTop;          // 사용 안함
         setScrollTop(e.target.scrollTop);
         console.log(introduceInView, introduceEntry, scrollTop);
-
         console.log(introduceEntry?.intersectionRect.top);    // 현재 entry가 화면에 나타나고 있다면 어느 위치에 뜨고 있는지 위치 값들 뜨는데 현재 top 값만 가져왔음
     };
 

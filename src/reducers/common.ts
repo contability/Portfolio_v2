@@ -4,7 +4,8 @@ const initialState = {
     isMobile: false,
     isLogin: "",
     prjName: "",
-    selectMenu: ""
+    selectMenu: "",
+    isSpinner: 0
 };
 
 const common = createSlice({
@@ -22,6 +23,9 @@ const common = createSlice({
         },
         setSelectMenu: (state, action) => {
             state.selectMenu = action.payload;
+        },
+        setIsSpinner: (state, action) => {
+            state.isSpinner = action.payload;
         }
     }
 });
@@ -32,7 +36,8 @@ export const {
     setMobile,
     setLogin,
     setPrjName,
-    setSelectMenu
+    setSelectMenu,
+    setIsSpinner
 } = common.actions;
 
 export default common.reducer;

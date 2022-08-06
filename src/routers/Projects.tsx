@@ -1,9 +1,13 @@
 import { useEffect, useRef } from "react";
 import { useInView } from "react-intersection-observer";
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
 import styledComponents from "styled-components";
+import PopupBg from "../components/common/PopupBg";
 import LeftNavBar from "../components/left/LeftNavBar";
 import { D_Projects, projectsType } from "../data/D_Projects";
+import { setIsSpinner } from "../reducers/common";
 
 interface typeLocation{
     id: number;
@@ -11,7 +15,10 @@ interface typeLocation{
 
 const Projects = () => {
     const location = useLocation();
+    const dispatch = useDispatch();
+    const isSpinner = useSelector((state: any) => state.common.isSpinner);
 
+    // 굳이 써볼랬는데 아쉽..
     // const [gisRef, gisInView, gisEntry ] : any = useInView();
     // const [nftMarketRef, nftMarketInView, nftMarketEntry ] : any = useInView();
     // const [defiRef, defiInView, defiEntry ] : any = useInView();
@@ -21,6 +28,17 @@ const Projects = () => {
     const nftMarketRef = useRef<null | any>();
     const defiRef = useRef<null | any>();
     const exchangeRef = useRef<null | any>();
+
+    const init = () => {
+        if(isSpinner < 1){
+            setTimeout( () => {
+                dispatch(setIsSpinner(isSpinner + 1));
+                scrollTo();
+            }, 2000);
+        }else{
+            scrollTo();
+        }
+    };
 
     const scrollTo : Function = () => {
             const state = location.state as typeLocation; 
@@ -44,25 +62,8 @@ const Projects = () => {
             }
     };
 
-    // const initRef : Function = (prjId : number) => {
-    //     console.log(prjId);
-        
-    //     switch (prjId) {
-    //         case 1:
-    //             return gisRef;
-    //         case 2:
-    //             return defiRef;
-    //         case 3:
-    //             return nftMarketRef;
-    //         case 4:
-    //             return exchangeRef;
-    //         default:
-    //             break;
-    //     }
-    // };
-
     useEffect(() => {
-        scrollTo();
+        init();
     }, []);
 
     return(
