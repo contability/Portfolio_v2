@@ -15,7 +15,7 @@ const SpinnerBox = styled.div`
     position: fixed;
     top: 50%;
     left: 50%;
-    height: 75px;
+    height: 60px;
     z-index: 10;
 
     img{

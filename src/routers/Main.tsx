@@ -79,7 +79,7 @@ const Main = () => {
                                 <div>
                                     <p>is a client,</p>
                                     <p>server,</p>
-                                    <p>developer at heart</p>
+                                    <p>developer junior</p>
                                 </div>
                                 <div>
                                     {/* 
