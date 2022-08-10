@@ -70,9 +70,10 @@ const D_Projects: projectsType[] = [{
     ],
     usedSkills: [
         "javascript",
-        "react",
+        "react(+redux)",
         "mySQL",
         "materialUI",
+        "styled-components",
         "AWS",
         "web3"
     ],img:[
@@ -95,10 +96,11 @@ const D_Projects: projectsType[] = [{
     ],
     usedSkills: [
         "javascript",
-        "react",
+        "react(+redux)",
         "nodeJs",
         "mySQL",
         "materialUI",
+        "styled-components",
         "solidity",
         "web3"
     ],img:[
@@ -121,7 +123,8 @@ const D_Projects: projectsType[] = [{
     ],
     usedSkills: [
         "javascript",
-        "react",
+        "react(+redux)",
+        "styled-components",
         "nodeJs",
         "mySQL",
         "web3"
