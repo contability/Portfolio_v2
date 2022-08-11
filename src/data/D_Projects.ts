@@ -58,7 +58,7 @@ const D_Projects: projectsType[] = [{
     ],mov: []
 },{
     id: 3,
-    name: "COLLEXX",
+    name: "NFT Market Project",
     start: "2022-05",
     end: "2022-07",
     summary: "NFT Market 플랫폼.  이더리움 폴리곤용 솔루션을 기반으로 직접 또는 경매를 통해 대체 불가능한 토큰을 판매할 수 있는 시장을 제공한다.",
@@ -79,11 +79,10 @@ const D_Projects: projectsType[] = [{
     ],img:[
         img_projects_3_1,
         img_projects_3_2,
-        img_projects_3_3,
     ],mov: []
 },{
     id: 2,
-    name: "BICOSWAP",
+    name: "DeFi Project",
     start: "2022-05",
     end: "2022-07",
     summary: "DeFi 플랫폼. ERC20 표준 확장 암호 화폐를 예치하여 상품 타입(고정형/가변형)에 따라 보상으로 지급되는 보상 토큰을 받는 방식으로 작동한다. 또한 외부 토큰을 확장 토큰으로 교환 하여 사용할 수 있게 하는 교환소 또한 구현되어있다.",
@@ -111,7 +110,7 @@ const D_Projects: projectsType[] = [{
     mov: []
 },{
     id: 4,
-    name: "margin",
+    name: "Exchange Project",
     start: "2022-06",
     end: "2022-07",
     summary: "현물, 파생 상품과 소셜 암호화 트레이딩을 제안하는 암호화 거래 플랫폼이다.",
