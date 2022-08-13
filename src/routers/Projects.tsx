@@ -83,6 +83,12 @@ const Projects = () => {
                         <span>{prj.start}</span>
                         <span>&nbsp;~&nbsp;</span>
                         <span>{prj.end}</span>
+                        <p>
+                            <img src={icon_github} alt="" className="prjImg" onClick={() => window.open(prj.gitUrl)}/>
+                            {prj.url && (
+                            <img src={icon_web} alt="" className="prjImg" onClick={() => window.open(prj.url)}/>
+                            )}
+                        </p>
                     </div>
                     <div className="prjSummary">{prj.summary}</div>
                     <div className="imageArea">
@@ -138,6 +144,17 @@ const ProjectsBox = styledComponents.main`
             span{
                 font-size: 0.8rem;
             }
+
+            p{
+                padding-top: 5px;
+
+                .prjImg{
+                    width: 25px;
+                    padding-right: 5px;
+                    cursor: pointer;
+                }
+            }
+            
             
         }
         

@@ -60,7 +60,7 @@ const D_Projects: projectsType[] = [{
         img_projects_1_5
     ],
     mov: [],
-    gitUrl: "",
+    gitUrl: "https://github.com/contability/gis_project.git",
     url: ""
 },{
     id: 3,
