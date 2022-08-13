@@ -8,6 +8,8 @@ import PopupBg from "../components/common/PopupBg";
 import LeftNavBar from "../components/left/LeftNavBar";
 import { D_Projects, projectsType } from "../data/D_Projects";
 import { setIsSpinner } from "../reducers/common";
+import icon_github from "../icon/icon_github.png";
+import icon_web from "../icon/icon_web.png";
 
 interface typeLocation{
     id: number;
