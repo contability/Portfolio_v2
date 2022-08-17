@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styledComponents from "styled-components";
 import image_react from "../img/image_react.jpg";
@@ -17,8 +17,6 @@ import project01 from "../img/projects/image_projects_1_1_thumb.jpg";
 import project02 from "../img/projects/image_projects_2_1_thumb.jpg";
 import project03 from "../img/projects/image_projects_3_1_thumb.jpg";
 import project04 from "../img/projects/image_projects_4_thumb.jpg";
-import filter from "../assets/common/image_filter.jpg";
-import { useOnScreen } from "../utils/customHook";
 import { useInView } from "react-intersection-observer";
 
 const Main = () => {
@@ -49,6 +47,57 @@ const Main = () => {
             });
         }
     };
+
+    // const test = () => {
+    //     let answer = "";
+
+    //     // let m = "ABCDEFG";
+    //     let m = "CC#BCC#BCC#BCC#B";
+    //     // let musicinfos = ["12:00,12:14,HELLO,CDEFGAB", "13:00,13:05,WORLD,ABCDEF"];
+    //     let musicinfos = ["03:00,03:30,FOO,CC#B", "04:00,04:08,BAR,CC#BCC#BCC#B"];
+
+    //     musicinfos.map((v, i) => {
+    //         let splitStr = v.split(",");
+
+    //         let start : any = splitStr[0];
+    //         let end : any = splitStr[1];
+
+    //         // console.log(parseInt(end.split(":")[1]) - parseInt(start.split(":")[1]));
+            
+
+    //         let playTime = parseInt(end.split(":")[1]) - parseInt(start.split(":")[1]);
+
+    //         let title = splitStr[2];
+
+    //         let melody = splitStr[3];
+    //         let melodyLen = melody.length;
+
+    //         // console.log(start, end, title, melody, melodyLen);
+
+    //         if(playTime > melodyLen){
+    //             let roofCnt = Math.ceil(playTime / melodyLen);
+                
+    //             let tempMelodyStr = "";
+    //             for(let i = 0; i < roofCnt; i++){
+    //                 tempMelodyStr += melody;
+    //             }
+
+    //             melody = tempMelodyStr;
+    //         }
+
+    //         if(melody.indexOf(m) > -1){
+    //             answer = title;
+    //         }
+    //     });
+
+    //     console.log(answer);
+        
+        
+    // };
+
+    useEffect(() => {
+        // test();
+    }, []);
 
     return(
         <MainBox 

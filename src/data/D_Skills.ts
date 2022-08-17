@@ -38,4 +38,66 @@ const D_skills: skillsType[] = [{
     amount: 10
 }];
 
-export { D_skills };
+export interface usedSkills{
+    id: number;
+    usedSkills: Array<string>;
+}
+
+const D_usedProjectSkills : usedSkills[] = [{
+    id: 1,
+    usedSkills : [
+        "java",
+        "javascript",
+        "spring framework",
+        "jQuery",
+        "oracle",
+        "msSQL",
+        "postgreSQL",
+        "mySQL",
+        "openLayers",
+        "svn"
+    ],
+},{
+    id: 2,
+    usedSkills: [
+        "javascript",
+        "react",
+        "redux",
+        "nodeJs",
+        "mySQL",
+        "materialUI",
+        "styled-components",
+        "solidity",
+        "web3",
+        "AWS",
+        "git"
+    ],
+},{
+    id: 3,
+    usedSkills: [
+        "javascript",
+        "react",
+        "redux",
+        "mySQL",
+        "materialUI",
+        "styled-components",
+        "AWS",
+        "web3",
+        "git"
+    ],
+},{
+    id: 4,
+    usedSkills: [
+        "javascript",
+        "react",
+        "redux",
+        "styled-components",
+        "nodeJs",
+        "mySQL",
+        "web3",
+        "AWS",
+        "git"
+    ],
+}];
+
+export { D_skills, D_usedProjectSkills };

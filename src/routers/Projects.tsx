@@ -10,6 +10,7 @@ import { D_Projects, projectsType } from "../data/D_Projects";
 import { setIsSpinner } from "../reducers/common";
 import icon_github from "../icon/icon_github.png";
 import icon_web from "../icon/icon_web.png";
+import { D_usedProjectSkills } from "../data/D_Skills";
 
 interface typeLocation{
     id: number;
@@ -91,6 +92,15 @@ const Projects = () => {
                         </p>
                     </div>
                     <div className="prjSummary">{prj.summary}</div>
+                    <div>
+                        <dl>
+                            {D_usedProjectSkills.map((project: any, i : number) => (
+                                project.usedSkill.map((skill : any, i : number) => {
+                                    
+                             })   
+                            ))}
+                        </dl>
+                    </div>
                     <div className="imageArea">
                         {prj.img.map((v: any, i: number) => (
                             <p key={i}>

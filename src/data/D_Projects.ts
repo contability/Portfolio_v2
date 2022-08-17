@@ -18,12 +18,13 @@ export interface projectsType{
     end: string;
     summary: string;
     desc: Array<string>;
-    usedSkills: Array<string>;
     img: any;
     mov: any;
     gitUrl: string;
     url: string;
 }
+
+
 
 const D_Projects: projectsType[] = [{
     id: 1,
@@ -40,18 +41,7 @@ const D_Projects: projectsType[] = [{
         "리포팅 툴을 활용한 통계 리포트 출력",
         "해당 기술을 토대로 피자헛 상권 관리 시스템, 한국수력원자력, 강릉시 등 40여건의 SI/SM 프로젝트 수행"
     ],
-    usedSkills : [
-        "java",
-        "javascript",
-        "spring framework",
-        "jQuery",
-        "oracle",
-        "msSQL",
-        "postgreSQL",
-        "mySQL",
-        "openLayers",
-        "svn"
-    ],
+    
     img:[
         img_projects_1_1,
         img_projects_1_2,
@@ -74,16 +64,7 @@ const D_Projects: projectsType[] = [{
         "React front 개발",
         "materialUI를 활용한 UI 구현"
     ],
-    usedSkills: [
-        "javascript",
-        "react(+redux)",
-        "mySQL",
-        "materialUI",
-        "styled-components",
-        "AWS",
-        "web3",
-        "git"
-    ],img:[
+    img:[
         img_projects_3_1,
         img_projects_3_2,
     ],
@@ -103,18 +84,7 @@ const D_Projects: projectsType[] = [{
         "smart contract 배포 및 활용",
         "api 구현 및 활용"
     ],
-    usedSkills: [
-        "javascript",
-        "react(+redux)",
-        "nodeJs",
-        "mySQL",
-        "materialUI",
-        "styled-components",
-        "solidity",
-        "web3",
-        "AWS",
-        "git"
-    ],img:[
+    img:[
         img_projects_2_1,
         img_projects_2_2,
         img_projects_2_3
@@ -136,19 +106,7 @@ const D_Projects: projectsType[] = [{
         "Traiding View 거래 차트 동기화 및 데이터 활용",
         "api 구현 및 활용"
     ],
-    usedSkills: [
-        "javascript",
-        "react(+redux)",
-        "styled-components",
-        "nodeJs",
-        "mySQL",
-        "web3",
-        "AWS",
-        "git"
-    ],
-    img: [
-        
-    ],
+    img: [],
     mov: [
         mov_projects_4
     ],
