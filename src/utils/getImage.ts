@@ -18,11 +18,14 @@ const getSkillImg: Function = (skill : string) => {
         case "postgresql":
             url = "https://cdn.jumpit.co.kr/images/stacks/postgresql.png";
             break;
-        case "mssql":
+        case "msSQL":
             url = "https://cdn.jumpit.co.kr/images/stacks/mssql.png";
             break;
         case "oracle":
             url = "https://cdn.jumpit.co.kr/images/stacks/oracle.png";
+            break;
+        case "mySQL":
+            url = "https://cdn.jumpit.co.kr/images/stacks/mysql.png";
             break;
         case "spring framework":
             url = "https://cdn.jumpit.co.kr/images/stacks/springframework.png";
@@ -30,8 +33,17 @@ const getSkillImg: Function = (skill : string) => {
         case "react":
             url = "https://cdn.jumpit.co.kr/images/stacks/react.png";
             break;
+        case "redux":
+            url = "https://cdn.jumpit.co.kr/images/stacks/redux.png";
+            break;
         case "nodeJs":
             url = "https://cdn.jumpit.co.kr/images/stacks/node.js.png";
+            break;
+        case "material UI":
+            url = "https://cdn.jumpit.co.kr/images/stacks/material-ui.png";
+            break;
+        case "git":
+            url = "https://cdn.jumpit.co.kr/images/stacks/git.png";
             break;
         case "amazon EC2":
             url = "https://cdn.jumpit.co.kr/images/stacks/amazonec2.png";

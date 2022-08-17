@@ -54,8 +54,10 @@ const D_usedProjectSkills : usedSkills[] = [{
         "msSQL",
         "postgreSQL",
         "mySQL",
+        "easy UI",
         "openLayers",
-        "svn"
+        "tomcat",
+        "SVN"
     ],
 },{
     id: 2,
@@ -65,11 +67,11 @@ const D_usedProjectSkills : usedSkills[] = [{
         "redux",
         "nodeJs",
         "mySQL",
-        "materialUI",
+        "material UI",
         "styled-components",
         "solidity",
         "web3",
-        "AWS",
+        "amazon EC2",
         "git"
     ],
 },{
@@ -79,9 +81,10 @@ const D_usedProjectSkills : usedSkills[] = [{
         "react",
         "redux",
         "mySQL",
-        "materialUI",
+        "material UI",
         "styled-components",
-        "AWS",
+        "amazon EC2",
+        "amazon S3",
         "web3",
         "git"
     ],
@@ -95,7 +98,7 @@ const D_usedProjectSkills : usedSkills[] = [{
         "nodeJs",
         "mySQL",
         "web3",
-        "AWS",
+        "amazon EC2",
         "git"
     ],
 }];

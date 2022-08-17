@@ -10,7 +10,8 @@ import { D_Projects, projectsType } from "../data/D_Projects";
 import { setIsSpinner } from "../reducers/common";
 import icon_github from "../icon/icon_github.png";
 import icon_web from "../icon/icon_web.png";
-import { D_usedProjectSkills } from "../data/D_Skills";
+import { D_usedProjectSkills, usedSkills } from "../data/D_Skills";
+import { getSkillImg } from "../utils/getImage";
 
 interface typeLocation{
     id: number;
@@ -65,6 +66,20 @@ const Projects = () => {
             }
     };
 
+    const getSkillUrl = (id : number) => {
+        D_usedProjectSkills.map((v, i) => {
+            let ddBuffer = (<></>);
+            v.usedSkills.map((skill, j) => {
+                // ddBuffer += (
+                //     <>
+                //         <img src={getSkillImg(skill)} alt="" />
+                //         <dd>skill</dd>
+                //    </>
+                // );
+            });
+        });
+    };
+
     useEffect(() => {
         init();
     }, []);
@@ -92,13 +107,30 @@ const Projects = () => {
                         </p>
                     </div>
                     <div className="prjSummary">{prj.summary}</div>
-                    <div>
+                    <div className="skillList">
                         <dl>
-                            {D_usedProjectSkills.map((project: any, i : number) => (
-                                project.usedSkill.map((skill : any, i : number) => {
-                                    
-                             })   
-                            ))}
+                            {/* <dd>
+                                <img className="skillThumbnail" src="https://cdn.jumpit.co.kr/images/stacks/javascript.png" alt="" />
+                                <span>javascript</span>
+                            </dd>
+                            <dd>
+                                <img className="skillThumbnail" src="https://cdn.jumpit.co.kr/images/stacks/javascript.png" alt="" />
+                                <span>javascript</span>
+                            </dd> */}
+                            {
+                                D_usedProjectSkills.map((skills : usedSkills, j: number) => {
+                                    if(skills.id === prj.id){
+                                        return skills.usedSkills.map((skill : any, k: number) => (
+                                            // return (
+                                                <dd>
+                                                    <img src={getSkillImg(skill)} alt="" className="skillThumbnail" />
+                                                    <span>{skill}</span>
+                                                </dd>
+                                            // )
+                                        ))
+                                    }
+                                })
+                            }
                         </dl>
                     </div>
                     <div className="imageArea">
@@ -164,12 +196,43 @@ const ProjectsBox = styledComponents.main`
                     cursor: pointer;
                 }
             }
-            
-            
         }
         
         .prjSummary{
             padding: 6vh 0;
+        }
+
+        .skillList{
+            > dl{
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                align-items: center;
+                gap: 6px;
+                padding-bottom: 10px;
+
+                > dd{
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: space-between;
+                    width: fit-content;
+                    height: 30px;
+                    padding: 8px 36px 8px 12px;
+                    border-radius: 3px;
+                    background-color: #78777e;
+                    font-size: 13px;
+                    color: #ffffff;
+                    font-weight: 700;
+
+                    .skillThumbnail{
+                        width: 20px;
+                        height: 20px;
+                        border-radius: 5px;
+                        margin-right: 10px;
+                    }
+                }
+            }
         }
 
         .desc{
