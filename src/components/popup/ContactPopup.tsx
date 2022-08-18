@@ -51,11 +51,6 @@ const ContactPopupBox = styled.div`
     width: 600px;
     height: 300px;
     border-radius: 20px;
-    // background: linear-gradient(
-    //     180deg,
-    //     rgb(249, 158, 47, 1) 0%,
-    //     rgb(240, 121, 15, 1) 100%
-    // );
 
     background: linear-gradient(
         180deg, 

@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
@@ -12,6 +12,7 @@ import icon_github from "../icon/icon_github.png";
 import icon_web from "../icon/icon_web.png";
 import { D_usedProjectSkills, usedSkills } from "../data/D_Skills";
 import { getSkillImg } from "../utils/getImage";
+import ImgPopup from "../components/common/ImgPopup";
 
 interface typeLocation{
     id: number;
@@ -32,6 +33,8 @@ const Projects = () => {
     const nftMarketRef = useRef<null | any>();
     const defiRef = useRef<null | any>();
     const exchangeRef = useRef<null | any>();
+
+    const [imgPopup, setImgPopup] = useState<any>();
 
     const init = () => {
         if(isSpinner < 1){
@@ -66,20 +69,6 @@ const Projects = () => {
             }
     };
 
-    const getSkillUrl = (id : number) => {
-        D_usedProjectSkills.map((v, i) => {
-            let ddBuffer = (<></>);
-            v.usedSkills.map((skill, j) => {
-                // ddBuffer += (
-                //     <>
-                //         <img src={getSkillImg(skill)} alt="" />
-                //         <dd>skill</dd>
-                //    </>
-                // );
-            });
-        });
-    };
-
     useEffect(() => {
         init();
     }, []);
@@ -109,24 +98,14 @@ const Projects = () => {
                     <div className="prjSummary">{prj.summary}</div>
                     <div className="skillList">
                         <dl>
-                            {/* <dd>
-                                <img className="skillThumbnail" src="https://cdn.jumpit.co.kr/images/stacks/javascript.png" alt="" />
-                                <span>javascript</span>
-                            </dd>
-                            <dd>
-                                <img className="skillThumbnail" src="https://cdn.jumpit.co.kr/images/stacks/javascript.png" alt="" />
-                                <span>javascript</span>
-                            </dd> */}
                             {
                                 D_usedProjectSkills.map((skills : usedSkills, j: number) => {
                                     if(skills.id === prj.id){
                                         return skills.usedSkills.map((skill : any, k: number) => (
-                                            // return (
-                                                <dd>
-                                                    <img src={getSkillImg(skill)} alt="" className="skillThumbnail" />
-                                                    <span>{skill}</span>
-                                                </dd>
-                                            // )
+                                            <dd key={k}>
+                                                <img src={getSkillImg(skill)} alt="" className="skillThumbnail" />
+                                                <span>{skill}</span>
+                                            </dd>
                                         ))
                                     }
                                 })
@@ -136,7 +115,8 @@ const Projects = () => {
                     <div className="imageArea">
                         {prj.img.map((v: any, i: number) => (
                             <p key={i}>
-                                <img src={v} alt="" onClick={() => window.open(v)}/>
+                                {/* <img src={v} alt="" onClick={() => window.open(v)}/> */}
+                                <img src={v} alt="" onClick={() => setImgPopup(v)}/>
                             </p>
                         ))}
                     </div>
@@ -158,7 +138,16 @@ const Projects = () => {
                     </div>
                 </article>
             ))}
+
+            {imgPopup && (
+                <>
+                    <ImgPopup content={imgPopup} />
+                    <PopupBg off={setImgPopup} bg={true} blur={true} imgBg={true}/>
+                </>
+            )}
         </ProjectsBox>
+
+        
     );
 };
 

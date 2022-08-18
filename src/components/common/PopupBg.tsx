@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const PopupBg : Function = ({ bg, off, blur } : any) => {
+const PopupBg : Function = ({ bg, off, blur, imgBg } : any) => {
     const onClickEvent = () => {
         if(off) off();
     };
@@ -10,6 +10,7 @@ const PopupBg : Function = ({ bg, off, blur } : any) => {
 
         if(bg) className += " bg";
         if(blur) className += " blur";
+        if(imgBg) className += " imgBg";
 
         return className;
     };
@@ -34,6 +35,10 @@ const PopupBgBox = styled.div`
     &.blur{
         -webkit-backdrop-filter: blur(50px);
         backdrop-filter: blur(7px);
+    }
+
+    &.imgBg{
+        z-index: 51;
     }
 `;
 
