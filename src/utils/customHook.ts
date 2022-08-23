@@ -1,4 +1,7 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+
+const navigate = useNavigate();
 
 const useScroll = (e : any) => {
     const [scrollY, setScrollY] = useState<number>(0);
@@ -30,7 +33,16 @@ const useOnScreen = (ref : any) => {
     return isIntersecting;
 }
 
+/**
+ * 화면 넘어갈 때 반짝
+ * @param locationHash 넘어갈 routing url {string}
+ */
+const useMoveLocation : Function = (locationHash: string) => {
+    navigate(locationHash);
+};
+
 export { 
     useScroll
-    ,useOnScreen
+    ,useOnScreen,
+    useMoveLocation
 };
