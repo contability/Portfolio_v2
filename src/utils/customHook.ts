@@ -43,6 +43,6 @@ const useMoveLocation : Function = (locationHash: string) => {
 
 export { 
     useScroll
-    ,useOnScreen,
-    useMoveLocation
+    ,useOnScreen
+    ,useMoveLocation
 };
