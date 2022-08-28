@@ -115,8 +115,7 @@ const Projects = () => {
                     <div className="imageArea">
                         {prj.img.map((v: any, i: number) => (
                             <p key={i}>
-                                {/* <img src={v} alt="" onClick={() => window.open(v)}/> */}
-                                <img src={v} alt="" onClick={() => setImgPopup(v)}/>
+                                <img className="prjGrid" src={v} alt="" onClick={() => setImgPopup(v)}/>
                             </p>
                         ))}
                     </div>
@@ -235,16 +234,21 @@ const ProjectsBox = styledComponents.main`
         }
 
         .imageArea{
-            display: flex;
-            gap: 15px;
-            flex-direction: row;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
 
-            img{
-                width: 100%;
-                border-radius: 8px;
-                cursor: pointer;
-                box-shadow: 9px 13px 6px #00000029;
+            p{
+                img{
+                    width: 100%;
+                    border-radius: 8px;
+                    cursor: pointer;
+                    box-shadow: 9px 13px 6px #00000029;
+                }
+                
+                &:nth-child(3){
+                    grid-column: 1 / span 3;
+                }
             }
         }
 
