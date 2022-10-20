@@ -5,12 +5,16 @@ interface skillsType {
 
 const D_skills: skillsType[] = [
   {
-    id: "javascript",
+    id: "typeScript",
     amount: 60,
   },
   {
     id: "react",
-    amount: 50,
+    amount: 60,
+  },
+  {
+    id: "nextJs",
+    amount: 40,
   },
   {
     id: "nodeJs",
