@@ -14,7 +14,7 @@ const D_skills: skillsType[] = [
   },
   {
     id: "nextJs",
-    amount: 40,
+    amount: 50,
   },
   {
     id: "nodeJs",

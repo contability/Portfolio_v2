@@ -1,26 +1,32 @@
-export interface LeftNavList{
-    id: string;
-    eventType: string;
-    url?: string;
-};
+export interface LeftNavList {
+  id: string;
+  eventType: string;
+  url?: string;
+}
 
-export const list: LeftNavList[] = [{
+export const list: LeftNavList[] = [
+  {
     id: "about me",
     eventType: "routing",
-    url: "/introduce"
-},{
+    url: "/introduce",
+  },
+  {
     id: "projects",
     eventType: "routing",
-    url: "/projects"
-},{
+    url: "/projects",
+  },
+  {
     id: "contact",
-    eventType: "popup"
-},{
+    eventType: "popup",
+  },
+  {
     id: "github",
     eventType: "link",
-    url: "https://github.com/contability"
-},{
+    url: "https://github.com/contability",
+  },
+  {
     id: "kakao",
     eventType: "link",
-    url: "https://open.kakao.com/o/sMNmzS7d"
-}];
+    url: "https://open.kakao.com/o/sqHCJgYe",
+  },
+];
