@@ -10,7 +10,6 @@ const ImgPopup = ({ content }: any) => {
 
 const ImgPopupBox = styled.div`
   position: fixed;
-  width: 100%;
   height: 80%;
   z-index: 52;
   left: 13%;
